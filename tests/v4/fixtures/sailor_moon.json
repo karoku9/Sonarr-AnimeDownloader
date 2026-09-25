@@ -1,0 +1,20 @@
+{
+  "target": {
+    "canonical_title": "Sailor Moon Crystal",
+    "season_number": 2
+  },
+  "candidates": [
+    {
+      "id": "sm1",
+      "canonical_title": "Sailor Moon Crystal",
+      "season_number": 1,
+      "url": "https://catalog.example/crystal-1"
+    },
+    {
+      "id": "sm2",
+      "canonical_title": "Sailor Moon Crystal",
+      "season_number": 2,
+      "url": "https://catalog.example/crystal-2"
+    }
+  ]
+}

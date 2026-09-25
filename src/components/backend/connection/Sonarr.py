@@ -59,6 +59,10 @@ class Sonarr:
 		  La risposta HTTP
 		"""
 		return self.client.get(f"/episode/{epId}")
+
+	def episodes(self, seriesId:int) -> httpx.Response:
+		"""Ottiene tutti gli episodi noti di una serie per valutare le stagioni rilasciate."""
+		return self.client.get("/episode", params={"seriesId": seriesId})
 	
 	def queue(self) -> httpx.Response:
 		"""
@@ -84,6 +88,15 @@ class Sonarr:
 		  La risposta HTTP
 		"""
 		return self.client.get(f"/series/{seriesId}")
+
+	def series(self) -> httpx.Response:
+		"""
+		Ottiene la lista di tutte le serie configurate in Sonarr.
+
+		Returns:
+		  La risposta HTTP
+		"""
+		return self.client.get("/series")
 	
 	def tags(self) -> httpx.Response:
 		"""

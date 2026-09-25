@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "equivalence_sets": [
+    {
+      "id": "ufo-robot-grendizer-goldrake",
+      "titles": [
+        "UFO Robot Grendizer",
+        "UFO Robo Grendizer",
+        "UFO Robot Goldrake"
+      ],
+      "scope": "series",
+      "evidence": "AnimeWorld structured alternateName on the captured Italian release"
+    },
+    {
+      "id": "hi-high-score-girl",
+      "titles": [
+        "Hi Score Girl",
+        "High Score Girl"
+      ],
+      "scope": "series",
+      "evidence": "Captured Sonarr and AnimeWorld canonical-title spelling difference"
+    },
+    {
+      "id": "nadia-blue-water-pietra-azzurra",
+      "titles": [
+        "Nadia: The Secret of Blue Water",
+        "Nadia - Il mistero della pietra azzurra"
+      ],
+      "scope": "series",
+      "evidence": "Existing reviewed V4 manual alias plus captured AnimeWorld Italian release"
+    },
+    {
+      "id": "gto-great-teacher-onizuka",
+      "titles": [
+        "Great Teacher Onizuka",
+        "GTO: Great Teacher Onizuka"
+      ],
+      "scope": "series",
+      "evidence": "Captured AnimeWorld Italian release title; exact 43 episodes and 1999 premiere corroborate identity"
+    },
+    {
+      "id": "ganbare-doukichan-hyphen",
+      "titles": [
+        "Ganbare Doukichan",
+        "Ganbare Douki-chan"
+      ],
+      "scope": "series",
+      "evidence": "Captured provider spelling variant; exact 12 episodes and 2021 premiere corroborate identity"
+    },
+    {
+      "id": "fate-prisma-illya-2wei-herz",
+      "titles": [
+        "Fate Kaleid Liner PRISMA ILYA 2wei Herz!",
+        "Fate/Kaleid Liner Prisma Illya 2wei Herz!",
+        "Fate/kaleid liner Prisma?Illya 2wei Herz!"
+      ],
+      "scope": "season_title",
+      "evidence": "Captured Sonarr scoped scene alias and AnimeWorld provider names for the 2015 ten-episode release"
+    },
+    {
+      "id": "fate-prisma-illya-2wei",
+      "titles": [
+        "Fate Kaleid Liner PRISMA ILYA 2wei!",
+        "Fate/Kaleid Liner Prisma Illya 2wei!",
+        "Fate/kaleid liner Prisma?Illya 2wei!"
+      ],
+      "scope": "season_title",
+      "evidence": "Verified Sonarr S2 scene alias plus cross-checked Skyhook/TVDB spelling and captured AnimeWorld 2wei release"
+    }
+  ]
+}

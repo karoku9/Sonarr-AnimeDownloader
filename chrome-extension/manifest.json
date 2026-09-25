@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "AniDown v3 Helper",
+  "version": "0.2.0",
+  "description": "Map public AnimeWorld anime pages to confirmed AniDown v3 series and seasons.",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": [
+    "https://www.animeworld.ac/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AniDown v3 settings"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.animeworld.ac/*"],
+      "css": ["panel.css"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

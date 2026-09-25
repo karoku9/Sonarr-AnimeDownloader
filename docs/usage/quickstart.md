@@ -45,7 +45,7 @@ docker run -d \
     -p port:5000 \
     --env SONARR_URL='http://url:port' \
     --env ANIMEWORLD_URL='https://www.animeworld.ac' \
-    --env API_KEY='1234567890abcdefghijklmn' \
+    --env-file /path/to/private.env \
     --env TZ=Europe/Rome \
     --env PUID=1000 \
     --env PGID=1000 \

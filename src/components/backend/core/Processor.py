@@ -1,6 +1,8 @@
 from .Constant import LOGGER
 from ..connection import Sonarr, ExternalDB
 from ..database import *
+from ..sonarr_eligibility import is_anime_series
+from ..search_v3.variants import alternate_title_matches_season
 
 from typing import Iterable, List
 from functools import reduce
@@ -9,12 +11,15 @@ from itertools import count
 class Processor:
 	"""Processa i dati che provengono da Sonarr"""
 
-	def __init__(self, sonarr:Sonarr, *, settings:Settings, tags:Tags, table:Table, external:ExternalDB):
+	def __init__(self, sonarr:Sonarr, *, settings:Settings, tags:Tags, table:Table, external:ExternalDB, search_v3=None, mapping_automation=None, mapping_resolver=None):
 		self.sonarr = sonarr
 		self.settings = settings
 		self.tags = tags
 		self.table = table
 		self.external = external
+		self.search_v3 = search_v3
+		self.mapping_automation = mapping_automation
+		self.mapping_resolver = mapping_resolver or (mapping_automation.resolver if mapping_automation else None)
 		self.log = LOGGER
 	
 	def getData(self) -> list:
@@ -25,9 +30,6 @@ class Processor:
 
 		# Rimuovo le serie, stagioni non validi
 		missing = filter(self.__filter, missing)
-
-		# Aggiorno il database esterno
-		self.external.sync()
 
 		# Collego gli url per il download e rimuovo le stagioni che non fanno match
 		missing = filter(self.__bindUrl, missing)
@@ -96,9 +98,12 @@ class Processor:
 		"""
 
 		# Controllo che sia effettivamente un anime
-		if elem["type"] != 'anime': 
+		eligible, tag_override = is_anime_series(elem, self.settings, self.tags)
+		if not eligible:
 			self.log.debug(f"❌ Serie '{elem['title']}' scartata perchè non è di tipo anime.")
 			return False
+		if tag_override:
+			self.log.warning(f"SONARR_SERIES_TYPE_TAG_OVERRIDE\n  title={elem['title']}\n  series_type={elem['type']}\n  reason=active whitelist tag")
 
 		# Controllo i tag
 		active_tags:List[int] = [x['id'] for x in self.tags if self.tags.isActive(x['id'])]
@@ -180,51 +185,55 @@ class Processor:
 
 		table_entry = None
 		title = elem["title"]
-		if title not in self.table: 
+		if self.mapping_resolver:
+			table_entry = self.mapping_resolver.find_entry(elem)
+		elif title in self.table:
+			table_entry = self.table[title]
+		if table_entry is None:
 			if not self.settings["AutoBind"]:
 				# Se non è attiva la ricerca automatica provo a trovare dei url
 				self.log.debug(f"❌ Serie '{title}' scartata perchè non è presente nella TABELLA DI CONVERSIONE.")
 				return False
 		else:
-			table_entry = self.table[title]
-
 			if table_entry["absolute"]:
 				# Se la serie è in formato 'absolute'
 				elem = self.__convertToAbsolute(elem)
 
+		series_metadata_cache = {}
+
 		def getAlternativeTitles(seriesId:int, season_number:int):
 			"""Ottiene i titoli alternativi di una serie Sonarr"""
-			# avrò bisogno di effettuare chiamata alla specifica serie Sonarr
-			res = self.sonarr.serie(seriesId)
-			res.raise_for_status()
-			data = res.json()
-
-			if data["alternateTitles"] is None:
-				return []
-
-			return [
-				x['title'] 
-				for x in data["alternateTitles"]
-				if 'title' in x and x['title'] and (
-                    ("sceneSeasonNumber" in x and (
-                        x["sceneSeasonNumber"] == -1 or x["sceneSeasonNumber"] == season_number
-                    ))
-					or
-					("seasonNumber" in x and (
-                        x["seasonNumber"] == -1 or x["seasonNumber"] == season_number
-                    ))
-                )
-			]
+			aliases = elem.get("alternateTitles")
+			if not isinstance(aliases, list) or not aliases:
+				if seriesId not in series_metadata_cache:
+					res = self.sonarr.serie(seriesId)
+					res.raise_for_status()
+					series_metadata_cache[seriesId] = res.json()
+				aliases = series_metadata_cache[seriesId].get("alternateTitles") or []
+			return [alias for alias in aliases if alternate_title_matches_season(alias, season_number)]
 
 		def filterSeason(season:dict) -> bool:
 			"""Filtra le stagioni."""
 			season_number = str(season["number"])
-			if table_entry and season_number in table_entry["seasons"]:
+			series_info = None
+			if self.mapping_resolver:
+				resolution = self.mapping_resolver.resolve_existing_mapping(elem, season_number, log_skip=True)
+				if resolution["should_search"]:
+					series_info = self.__sonarrSeriesInfo(elem, getAlternativeTitles(elem['id'], season_number))
+					resolution = self.mapping_resolver.resolve_existing_mapping(series_info, season_number, log_skip=True)
+				if not resolution["should_search"]:
+					season["urls"].extend(list(resolution["urls"]))
+					return True
+				if not self.settings["AutoBind"]:
+					self.log.debug(f"Stagione {season['number']} della serie '{title}' senza mapping valido; ricerca automatica disattivata.")
+					return False
+			elif table_entry and season_number in table_entry["seasons"]:
 				# Se la stagione è presente nella tabella
 				if len(table_entry["seasons"][season_number]) == 0:
-					# Se non sono presenti dei url
-					self.log.debug(f"❌ Stagione {season['number']} della serie '{title}' scartata per mancanza di url.")
-					return False
+					# Una stagione senza URL e una mappatura incompleta che AutoBind puo completare.
+					self.log.debug(f"❌ Stagione {season['number']} della serie '{title}' non contiene url nella TABELLA DI CONVERSIONE.")
+					if not self.settings["AutoBind"]:
+						return False
 				else:
 					season["urls"].extend(list(table_entry["seasons"][season_number]))
 					return True
@@ -233,50 +242,36 @@ class Processor:
 				self.log.debug(f"❌ Stagione {season['number']} della serie '{title}' non è presente nella TABELLA DI CONVERSIONE.")
 				if not self.settings["AutoBind"]:
 					return False
-				else:
-					# Se è attiva la ricerca automatica provo a trovare dei url
-					if season['number'] == 'absolute':
-						# Se la stagione è di tipo absolute
-						self.log.debug(f"⛔ La ricerca automatica degli url di download è incompatibile con le serie ad ordinamento assoluto.")
-						return False
-					else:
-						if not elem["tvdbId"]:
-							# Se l'id non esiste tra le informazioni in mio possesso
-							self.log.debug(f'⛔ Non è possibile avviare la ricerca automatica perchè la serie \'{title}\' non ha l\'ID di TVDB.')
-							return False
-						else:
-							res = self.external.find(title, season["number"], elem["tvdbId"])
-							if res is None:
-								# Se non ho trovato nulla provo con i titoli alternativi
-								alt_titles = getAlternativeTitles(elem['id'],season_number)
 
-								for alt_title in alt_titles:
-									res = self.external.find(alt_title, season["number"], elem["tvdbId"])
-									if res is not None:
-										# Ho trovato un risultato usando un titolo alternativo
-										break
-								else:
-									# non ho trovato nulla
-									self.log.debug(f"🔴 Ricerca automatica url per la stagione {season['number']} della serie '{elem['title']}': nessun risultato trovato.")
-									return False
+			# Se è attiva la ricerca automatica provo a trovare dei url mancanti o incompleti.
+			if season['number'] == 'absolute':
+				# Se la stagione è di tipo absolute
+				self.log.debug(f"⛔ La ricerca automatica degli url di download è incompatibile con le serie ad ordinamento assoluto.")
+				return False
+			series_info = series_info or self.__sonarrSeriesInfo(elem, getAlternativeTitles(elem['id'], season_number))
+			if not self.search_v3:
+				self.log.error("OLD_SEARCH_PATH_USED: Search V3 unavailable in Processor.")
+				return False
+			language = self.mapping_automation.preferences.language_for(title) if self.mapping_automation else "AUTO"
+			if self.mapping_automation:
+				search = self.mapping_automation.search_mapping(series_info, season["number"], language_preference=language)
+			else:
+				self.log.error("OLD_SEARCH_PATH_USED: Processor mapping automation unavailable.")
+				search = self.search_v3.search(series_info, language_preference=language, season=season["number"])
+			if search["status"] != "matched" or not search["selected_candidate"]:
+				if self.mapping_automation:
+					self.mapping_automation.handle_search_result(title, season_number, search)
+				self.log.debug(f"Ricerca automatica Search V3 per '{elem['title']}' stagione {season['number']}: {search['status']}; {search['errors']}")
+				return False
+			res = {"name": search["selected_candidate"]["title"], "url": search["selected_candidate"]["url"]}
 
-							# res è una lista di dizionari con 'name' e 'url'
-							urls = [r["url"] for r in res]
-							names = [r["name"] for r in res]
-							
-							if len(urls) == 1:
-								self.log.warning(f"🟢 Ricerca automatica url per la stagione {season['number']} della serie '{elem['title']}': {urls[0]}")
-							else:
-								self.log.warning(f"🟢 Ricerca automatica url per la stagione {season['number']} della serie '{elem['title']}': trovati {len(urls)} url (split cour)")
-								for name, url in zip(names, urls):
-									self.log.warning(f"   - {name}: {url}")
-							
-							# aggiungo tutti gli url trovati
-							season["urls"].extend(urls)
+			self.log.warning(f"Ricerca Search V3 selezionata per la stagione {season['number']} della serie '{elem['title']}': {res['url']} (score {search['selected_candidate']['score']})")
+			if self.mapping_automation:
+				self.mapping_automation.handle_search_result(title, season_number, search)
+			# aggiungo ciò che ho trovato
+			season["urls"].append(res["url"])
 
-							# Adesso devo aggiornare la tabella, aggiungendo gli url
-							self.table.appendUrls(title, season['number'], urls)
-							return True
+			return True
 
 		# Aggiungo gli url alle stagioni
 		elem["seasons"] = list(filter(filterSeason, elem["seasons"]))
@@ -327,6 +322,9 @@ class Processor:
 
 		return {
 			"title": elem["series"]["title"],
+			"cleanTitle": elem["series"].get("cleanTitle"),
+			"sortTitle": elem["series"].get("sortTitle"),
+			"originalTitle": elem["series"].get("originalTitle"),
 			"path": elem["series"]["path"],
 			"tvdbId": elem["series"]["tvdbId"] if "tvdbId" in elem["series"] else None,
 			"tvRageId": elem["series"]["tvRageId"] if "tvRageId" in elem["series"] else None,
@@ -334,7 +332,17 @@ class Processor:
 			"imdbId": elem["series"]["imdbId"] if "imdbId" in elem["series"] else None,
 			"id": elem["series"]["id"],
 			"type": elem["series"]["seriesType"],
-			"tags": elem["series"]["tags"]
+			"tags": elem["series"]["tags"],
+			"alternateTitles": elem["series"].get("alternateTitles") or [],
+		}
+
+	def __sonarrSeriesInfo(self, elem:dict, alternate_titles:list) -> dict:
+		return {
+			"title": elem.get("title", ""),
+			"cleanTitle": elem.get("cleanTitle", ""),
+			"sortTitle": elem.get("sortTitle", ""),
+			"originalTitle": elem.get("originalTitle", ""),
+			"alternateTitles": [title if isinstance(title, dict) else {"title": title} for title in alternate_titles],
 		}
 
 	def __extractSeason(self, elem:dict) -> dict:

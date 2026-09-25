@@ -1,17 +1,24 @@
-FROM --platform=$BUILDPLATFORM python:3.13-alpine
+FROM python:3.13.2-slim
 
 LABEL maintainer="MainKronos"
+LABEL org.opencontainers.image.title="AniDown v4"
 
-ARG TARGETPLATFORM
-ARG BUILDPLATFORM
+RUN export DEBIAN_FRONTEND=noninteractive; \
+	apt-get update; \
+	apt-get -y upgrade; \
+	apt-get -y install --no-install-recommends; \
+	apt-get -y install curl; \
+	apt-get -y install ffmpeg; \
+	apt-get -y install rtmpdump; \
+	apt-get -y install tzdata; \
+	apt-get -y install build-essential; \
+	apt-get -y install locales && locale-gen it_IT.UTF-8; \
+	apt-get clean; \
+	apt-get autoclean; \
+	rm -rf /var/lib/apt/lists/*
 
-RUN apk update && \
-	apk upgrade && \
-	apk add --no-cache curl ffmpeg rtmpdump tzdata build-base musl-locales musl-locales-lang shadow && \
-	rm -rf /var/cache/apk/*
-
-RUN addgroup --gid 1000 dockeruser && \
-	adduser --uid 1000 -D -G dockeruser dockeruser
+RUN groupadd --gid 1000 dockeruser
+RUN useradd --no-log-init -r -m --gid dockeruser --uid 1000 dockeruser 
 
 RUN pip3 install --no-cache-dir --upgrade pip
 
@@ -19,45 +26,40 @@ RUN pip3 install config --upgrade --no-cache-dir
 
 COPY src/requirements.txt /tmp/
 
-#armv7 fix
-RUN if [ "$TARGETPLATFORM" = "linux/arm/v7" ]; then \
-        pip3 install --no-cache-dir --only-binary=all \
-            httptools uvloop watchfiles uvicorn || \
-        pip3 install --no-cache-dir uvicorn && \
-        pip3 install --no-cache-dir -r /tmp/requirements.txt; \
-    else \
-        pip3 install --no-cache-dir -r /tmp/requirements.txt; \
-    fi
+RUN pip3 install --no-cache-dir -r /tmp/requirements.txt
 
-RUN mkdir /downloads && \
-	mkdir /src
+RUN mkdir /downloads
+RUN mkdir /src
 
 WORKDIR /src
 
 COPY src/ /src/
 
-RUN chmod 777 /downloads -R && \
-	chmod 777 /src -R
+RUN chmod 777 /downloads -R 
+RUN chmod 777 /src -R 
 
-RUN gcc /src/start.c -o /start.bin && \
-	rm /src/start.c && \
-	chown root:root /start.bin && \
-	chmod 6751 /start.bin
+RUN gcc /src/start.c -o /start.bin
+RUN rm /src/start.c
+RUN chown root:root /start.bin
+RUN chmod 6751 /start.bin
 
-ENV LANG=it_IT.UTF-8 \
-    LC_ALL=it_IT.UTF-8 \
-    FLASK_DEBUG=production \
-    PIP_ROOT_USER_ACTION=ignore \
-    USER_NAME=dockeruser
+RUN sed -i -e 's/# it_IT.UTF-8 UTF-8/it_IT.UTF-8 UTF-8/' /etc/locale.gen && \
+	dpkg-reconfigure --frontend=noninteractive locales && \
+	update-locale LANG=it_IT.UTF-8
 
-ARG set_version="dev"
+ENV FLASK_DEBUG production
+ENV PIP_ROOT_USER_ACTION ignore
+
+# USER dockeruser
+ENV USER_NAME dockeruser
+
+ARG set_version="AniDown v4"
 ENV VERSION=$set_version
 
 EXPOSE 5000
 
 VOLUME [ "/downloads", "/src/script", "/src/database" ]
 
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
-    CMD curl --fail http://localhost:5000 || exit 1
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD curl --fail http://localhost:5000 || exit 1
 
 CMD ["/start.bin"]

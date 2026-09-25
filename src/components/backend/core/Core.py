@@ -2,6 +2,10 @@ from . import Constant as ctx
 from ..utility import ColoredString as cs
 from ..database import *
 from ..connection import *
+from ..search_v3 import SearchV3Service
+from ..mapping_automation import MappingAutomation
+from ..runtime import RuntimeSettings
+from ..event_log import StructuredEventStore
 from .Downloader import Downloader
 from .Processor import Processor
 
@@ -40,6 +44,7 @@ class Core(threading.Thread):
 		super().__init__(name=self.__class__.__name__, daemon=True)
 
 		self.semaphore = threading.Condition()
+		self.scan_lock = threading.Lock()
 		self.version = ctx.VERSION
 
 		### Setup logger ###
@@ -49,8 +54,14 @@ class Core(threading.Thread):
 		self.settings = settings if settings else Settings(ctx.DATABASE_FOLDER.joinpath('settings.json'))
 		self.tags = tags if tags else Tags(ctx.DATABASE_FOLDER.joinpath('tags.json'))
 		self.table = table if table else Table(ctx.DATABASE_FOLDER.joinpath('table.json'))
-		self.connections_db = connections_db if connections_db else ConnectionsDB(ctx.DATABASE_FOLDER.joinpath('connections.json'), ctx.SCRIPT_FOLDER)
+		connections_path = ctx.DATABASE_FOLDER.joinpath('connections.json')
+		if not connections_path.exists() and ctx.SCRIPT_FOLDER.joinpath('connections.json').exists():
+			connections_path = ctx.SCRIPT_FOLDER.joinpath('connections.json')
+		self.connections_db = connections_db if connections_db else ConnectionsDB(connections_path, ctx.SCRIPT_FOLDER)
 		self.external = external if external else ExternalDB()
+		self.events = StructuredEventStore(ctx.DATABASE_FOLDER.joinpath("ui_log_events.json"))
+		self.search_v3 = SearchV3Service(ctx.DATABASE_FOLDER, ctx.ANIMEWORLD_URL, self.table, self.log, self.events)
+		self.runtime_settings = RuntimeSettings(ctx.DATABASE_FOLDER.joinpath("runtime_settings.json"), self.log, self.events)
 
 		### Fix log level ###
 		self.log.setLevel(self.settings["LogLevel"])
@@ -59,11 +70,23 @@ class Core(threading.Thread):
 		self.sonarr = sonarr if sonarr else Sonarr(ctx.SONARR_URL, ctx.API_KEY)
 		self.github = github if github else GitHub()
 		self.connections = ConnectionsManager(self.connections_db)
+		self.mapping_automation = MappingAutomation(
+			ctx.DATABASE_FOLDER,
+			self.table,
+			self.search_v3,
+			self.runtime_settings,
+			self.sonarr,
+			self.settings,
+			self.tags,
+			self.log,
+			self.events,
+		)
+		self.mapping_resolver = self.mapping_automation.resolver
 
 		### Setup Logic ###
 		aw.SES.base_url = ctx.ANIMEWORLD_URL
-		self.processor = Processor(sonarr=self.sonarr, settings=self.settings, table=self.table, tags=self.tags, external=self.external)
-		self.downloader = Downloader(settings=self.settings, sonarr=self.sonarr, connections=self.connections, folder=ctx.DOWNLOAD_FOLDER)
+		self.processor = Processor(sonarr=self.sonarr, settings=self.settings, table=self.table, tags=self.tags, external=self.external, search_v3=self.search_v3, mapping_automation=self.mapping_automation, mapping_resolver=self.mapping_resolver)
+		self.downloader = Downloader(settings=self.settings, sonarr=self.sonarr, connections=self.connections, folder=ctx.DOWNLOAD_FOLDER, runtime_settings=self.runtime_settings)
 
 		self.error = None
 
@@ -80,7 +103,7 @@ class Core(threading.Thread):
 		self.log.info("")
 		self.log.info("Globals")
 		self.log.info(f"  ├── {ctx.SONARR_URL = :}")
-		self.log.info(f"  ├── {ctx.API_KEY = :}")
+		self.log.info("  ├── API_KEY = [configured]")
 		self.log.debug(f"  ├── {ctx.ANIMEWORLD_URL = :}")
 		self.log.debug(f"  ├── {ctx.DOWNLOAD_FOLDER = :}")
 		self.log.debug(f"  ├── {ctx.DATABASE_FOLDER = :}")
@@ -158,15 +181,44 @@ class Core(threading.Thread):
 			self.log.exception(e)
 			self.error = e
 
-	def job(self):
+	def job(self, trigger: str = "scheduled"):
 		"""
 		Processo principale di ricerca e download.
 		"""
+		if not self.scan_lock.acquire(blocking=False):
+			self.log.info("MANUAL_SCAN_ALREADY_RUNNING" if trigger == "manual" else "SCHEDULED_SCAN_SKIPPED_ALREADY_RUNNING")
+			return {"started": False, "reason": "already_running"}
+		try:
+			return self.__job_locked(trigger)
+		finally:
+			self.scan_lock.release()
 
+	def __job_locked(self, trigger: str = "scheduled"):
 		try:
 			self.log.info("")
+			if trigger == "manual":
+				self.log.info("MANUAL_SCAN_STARTED")
+				if self.events:
+					self.events.record({
+						"type": "RUNTIME",
+						"event": "MANUAL_SCAN_STARTED",
+						"status": "info",
+						"compact": "Manual scan started",
+						"details": {"trigger": trigger},
+					})
 
 			missing = self.processor.getData()
+			episode_count = sum(len(season.get("episodes", [])) for serie in missing for season in serie.get("seasons", []))
+			if trigger == "manual":
+				self.log.info(f"SONARR_WANTED_MISSING_REFRESH\n  episodes_found={episode_count}\n  series_found={len(missing)}")
+				if self.events:
+					self.events.record({
+						"type": "SONARR",
+						"event": "SONARR_WANTED_MISSING_REFRESH",
+						"status": "info",
+						"compact": f"Sonarr wanted/missing refresh | {episode_count} episodes found",
+						"details": {"episodes_found": episode_count, "series_found": len(missing)},
+					})
 
 			self.log.info("")
 			self.log.info("──────────────────────────────────────────────────────────────────────────────────────────────")
@@ -181,8 +233,49 @@ class Core(threading.Thread):
 				self.log.info("")
 				self.log.info("─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ")
 				self.log.info("")
+			if trigger == "manual":
+				self.log.info(f"MANUAL_SCAN_COMPLETED\n  episodes_found={episode_count}\n  series_processed={len(missing)}")
+				if self.events:
+					self.events.record({
+						"type": "RUNTIME",
+						"event": "MANUAL_SCAN_COMPLETED",
+						"status": "success",
+						"compact": f"Manual scan completed | processed {episode_count} missing episodes",
+						"details": {"episodes_found": episode_count, "series_processed": len(missing), "downloaded": None, "skipped": None, "errors": 0},
+					})
+			return {"started": True, "episodes_found": episode_count, "series_processed": len(missing)}
 		except aw.DeprecatedLibrary as e:
 			self.log.error(cs.red(f"🅴🆁🆁🅾🆁: {e}"))
+			if trigger == "manual" and self.events:
+				self.events.record({
+					"type": "RUNTIME",
+					"event": "MANUAL_SCAN_FAILED",
+					"status": "error",
+					"compact": f"Manual scan failed | {e}",
+					"details": {"error": str(e)},
+				})
+			return {"started": True, "error": str(e)}
+
+	def runScanNow(self) -> dict:
+		"""Run one scan immediately in a background worker."""
+		if not self.scan_lock.acquire(blocking=False):
+			if self.events:
+				self.events.record({
+					"type": "RUNTIME",
+					"event": "MANUAL_SCAN_ALREADY_RUNNING",
+					"status": "warning",
+					"compact": "Manual scan ignored | a scan is already running",
+					"details": {},
+				})
+			return {"ok": False, "started": False, "message": "A scan is already running"}
+		def run_manual():
+			try:
+				self.__job_locked("manual")
+			finally:
+				self.scan_lock.release()
+		worker = threading.Thread(target=run_manual, name="ManualScan", daemon=True)
+		worker.start()
+		return {"ok": True, "started": True, "message": "Manual scan started"}
 				
 	def wakeUp(self) -> bool:
 		"""

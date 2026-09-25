@@ -1,0 +1,87 @@
+name: anidown-v4
+
+services:
+  anidown-v4:
+    profiles: [v4-preview]
+    build:
+      context: .
+      dockerfile: Dockerfile.v4
+    image: anidown-v4:preview-local
+    container_name: anidown-v4
+    environment:
+      ANIDOWN_V4_JUDGE_PROVIDER: disabled
+      ANIDOWN_V4_VERIFY_PROVIDER: disabled
+      ANIDOWN_V4_LIVE_SONARR: "0"
+      ANIDOWN_V4_DOWNLOADS_ENABLED: "0"
+      ANIDOWN_V4_DOWNLOAD_AUTOSYNC: "0"
+      ANIDOWN_V4_V3_QUIESCENCE: ""
+      ANIDOWN_V4_TELEGRAM_RELAY_URL: ""
+      ANIDOWN_V4_TRUSTED_PROXY_CIDRS: 10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
+    command:
+      - python
+      - -B
+      - -m
+      - src.v4.runtime
+      - --port
+      - "6004"
+      - --storage
+      - work/phase8/application.sqlite3
+      - --dataset-source
+      - tests/v4/fixtures/production_metadata_v1.json
+      - --docker-transport
+      - --public-metadata
+    expose:
+      - "6004"
+    volumes:
+      - v4-application:/app/work/phase8
+    networks:
+      - v4-preview-internal
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 128
+    restart: "no"
+
+  anidown-v4-loopback:
+    profiles: [v4-preview]
+    image: anidown-v4:preview-local
+    pull_policy: never
+    container_name: anidown-v4-loopback
+    command:
+      - python
+      - -B
+      - -m
+      - src.v4.loopback_proxy
+    depends_on:
+      anidown-v4:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:6004:6004"
+    networks:
+      v4-preview-internal: {}
+      v4-preview-ingress:
+        gw_priority: 1
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 128
+    restart: "no"
+
+volumes:
+  v4-application:
+    name: anidown-v4-preview-application
+
+networks:
+  v4-preview-internal:
+    driver: bridge
+    internal: true
+  v4-preview-ingress:
+    driver: bridge

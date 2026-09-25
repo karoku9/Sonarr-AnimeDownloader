@@ -8,6 +8,12 @@ class Table(Database):
 		self._data.sort(key=lambda s: s["title"])
 		return super().sync()
 
+	def replaceAll(self, data:list[dict]) -> bool:
+		"""Sostituisce tutta la tabella preservando il formato table.json."""
+		self._data = data
+		self.sync()
+		return True
+
 	def fix(self) -> None:
 		if not self.db.exists() or self.db.stat().st_size == 0:
 			self.write([])

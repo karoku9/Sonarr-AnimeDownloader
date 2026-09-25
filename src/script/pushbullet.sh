@@ -1,14 +1,10 @@
 #!/bin/sh
+set -eu
 
-################################################################
+: "${ANIDOWN_PUSHBULLET_ACCESS_TOKEN:?set ANIDOWN_PUSHBULLET_ACCESS_TOKEN via a secret provider}"
 
-ACCESS_TOKEN="codecodecodecode"
-PUSHBULLET_API="https://api.pushbullet.com/v2/pushes"
-
-################################################################
-
-curl -u $ACCESS_TOKEN: $PUSHBULLET_API \
-   -d type=note \
-   -d title="Sonarr - Anime Downloader" \
-   -d body="$1" \
-   --silent --output /dev/null
+curl -u "$ANIDOWN_PUSHBULLET_ACCESS_TOKEN:" "https://api.pushbullet.com/v2/pushes" \
+  -d type=note \
+  -d title="Sonarr - Anime Downloader" \
+  -d body="${1:-}" \
+  --silent --show-error --output /dev/null

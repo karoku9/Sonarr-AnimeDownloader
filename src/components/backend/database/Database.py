@@ -1,6 +1,6 @@
 import pathlib
-import json
 from copy import deepcopy
+from ..atomic_json import read_json_durable, write_json_durable
 
 class Database:
 	"""Gestione file JSON"""
@@ -19,13 +19,11 @@ class Database:
 	
 	def read(self):
 		"""Legge le informazioni contenute nel database."""
-		with self.db.open('r') as f:
-			return json.load(f)
+		return read_json_durable(self.db)
 	
 	def write(self, data) -> None:
 		"""Scrive le informazioni nel database."""
-		with self.db.open('w') as f:
-			json.dump(data,f)
+		write_json_durable(self.db, data)
 	
 	def sync(self) -> None:
 		"""Sincronizza il contenuto del db con quello in memoria."""

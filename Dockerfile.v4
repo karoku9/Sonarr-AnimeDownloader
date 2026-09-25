@@ -1,0 +1,23 @@
+FROM python:3.13.2-slim@sha256:8d9d0b8bcf6506481eae4907c18f5e3e7902e629f5f6d684f9e7c32e85e3ddf0
+ARG VCS_REF=unknown
+ARG SOURCE_TREE_STATE=unverified
+ARG SOURCE_DATE_EPOCH=0
+LABEL org.opencontainers.image.title="AniDown V4" \
+      org.opencontainers.image.revision=$VCS_REF \
+      org.opencontainers.image.source="https://github.com/MainKronos/Sonarr-AnimeDownloader"
+RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg rtmpdump ca-certificates && rm -rf /var/lib/apt/lists/*
+COPY requirements-v4.txt /app/requirements-v4.txt
+RUN pip install --no-cache-dir -r /app/requirements-v4.txt
+RUN groupadd --gid 10001 anidown && useradd --uid 10001 --gid 10001 --create-home anidown
+WORKDIR /app
+COPY anidown_eligibility.py /app/anidown_eligibility.py
+COPY src/__init__.py /app/src/__init__.py
+COPY src/v4/ /app/src/v4/
+COPY frontend-v4/index.html frontend-v4/app.js frontend-v4/presentation.js frontend-v4/dialog-focus.js frontend-v4/styles.css frontend-v4/icon.svg /app/frontend-v4/
+COPY tests/v4/fixtures/production_metadata_v1.json /app/tests/v4/fixtures/production_metadata_v1.json
+RUN ANIDOWN_V4_VCS_REVISION=$VCS_REF ANIDOWN_V4_TREE_STATE=$SOURCE_TREE_STATE python -B -m src.v4.source_manifest --root /app --output /app/SOURCE-MANIFEST.json
+RUN mkdir -p /app/work/phase8 && chown -R anidown:anidown /app/work
+USER anidown
+EXPOSE 6004
+HEALTHCHECK --interval=15s --timeout=3s --start-period=10s --retries=3 CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:6004/',timeout=2)" || exit 1
+CMD ["python","-B","-m","src.v4.runtime","--port","6004","--storage","work/phase8/application.sqlite3","--dataset-source","tests/v4/fixtures/production_metadata_v1.json","--docker-transport"]

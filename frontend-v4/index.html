@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#181b20">
+<meta name="color-scheme" content="dark">
+<title>AniDown V4</title>
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<script type="module" src="/assets/app.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Vai al contenuto principale</a>
+<div class="app-shell">
+  <aside class="side">
+    <a class="brand" href="#/series" aria-label="AniDown V4">
+      <span class="brand-mark">A</span><span class="brand-copy">AniDown <small>V4</small></span>
+    </a>
+    <nav aria-label="Navigazione principale" class="main-nav">
+      <a href="#/series" data-nav="series"><span class="nav-icon" aria-hidden="true">▤</span><span>Serie</span></a>
+      <a href="#/reviews" data-nav="reviews"><span class="nav-icon" aria-hidden="true">!</span><span>Attenzione</span><b id="review-count" hidden></b></a>
+      <a href="#/downloads" data-nav="downloads"><span class="nav-icon" aria-hidden="true">⇩</span><span>Download</span></a>
+      <a href="#/activity" data-nav="activity"><span class="nav-icon" aria-hidden="true">↺</span><span>Attività</span></a>
+      <a href="#/settings" data-nav="settings"><span class="nav-icon" aria-hidden="true">⚙</span><span>Impostazioni</span></a>
+    </nav>
+    <div class="runtime-pill"><i aria-hidden="true"></i><span id="runtime-mode">Shadow · no writes</span></div>
+  </aside>
+  <section class="content-shell">
+    <header class="topbar">
+      <div class="crumbs" id="crumbs">Serie</div>
+      <div class="top-actions"><span id="transport-note" class="transport-note" hidden>Accesso proxy in sola lettura</span><span id="scan-state" role="status" aria-live="polite"></span><button id="scan-button" class="button primary" aria-describedby="transport-note" disabled>Scansiona</button></div>
+    </header>
+    <div id="notice" class="notice" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+    <main id="main" tabindex="-1"><div class="loading" role="status" aria-live="polite">Caricamento…</div></main>
+  </section>
+</div>
+<dialog id="override-dialog" aria-label="Override stagione"></dialog>
+</body>
+</html>

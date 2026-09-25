@@ -26,14 +26,14 @@
 		<!-- Don't use this in production: -->
 		<!-- <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
 
-		<title>{% block title %}{% endblock %}</title>
+		<title>{% block title %}AniDown v3{% endblock %}</title>
 	</head>
-	<body>
+	<body class="{% block body_class %}{% endblock %}">
 
 		
 		<header>
 			{% block header %}
-			<h1>{{ self.title() }}</h1>
+			<h1>AniDown v3</h1>
 			<a class="btn" id="donate" href="https://github.com/sponsors/MainKronos" target="_blank">&#xe87d;</a>
 			<a class="btn" id="rescan" href="#">&#xe5d5;</a>
 			{% endblock %}
@@ -47,7 +47,7 @@
 		
 		<footer>
 			{% block footer %}
-			<a href="https://github.com/MainKronos/Sonarr-AnimeDownloader/releases/tag/{{ version }}" target="_blank">Ver. {{ version }}</a>
+			<a href="https://github.com/MainKronos/Sonarr-AnimeDownloader/releases/tag/{{ version }}" target="_blank">AniDown v3 - Ver. {{ version }}</a>
 			{% endblock %}
 		</footer>
 		

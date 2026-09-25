@@ -1,0 +1,903 @@
+{
+  "schema_version": 1,
+  "kind": "observed_catalog_episode_inspection",
+  "ground_truth": null,
+  "observations": [
+    {
+      "schema_version": 1,
+      "requested_url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc",
+      "fetched_at": "2026-09-14T14:08:08.431831+00:00",
+      "raw": {
+        "title": "Sailor Moon Crystal (ITA)",
+        "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/oXZDl",
+        "fields": [
+          {
+            "label": "Tipo:",
+            "value": "DUB ONA"
+          },
+          {
+            "label": "Stato:",
+            "value": "Finito"
+          },
+          {
+            "label": "Anno:",
+            "value": "2014"
+          },
+          {
+            "label": "Categoria:",
+            "value": "ONA"
+          },
+          {
+            "label": "Audio:",
+            "value": "Italiano"
+          },
+          {
+            "label": "Data di Uscita:",
+            "value": "05 Luglio 2014"
+          },
+          {
+            "label": "Stagione:",
+            "value": "Estate 2014"
+          },
+          {
+            "label": "Episodi:",
+            "value": "26"
+          },
+          {
+            "label": "Stato:",
+            "value": "Finito"
+          }
+        ],
+        "structured": [
+          {
+            "@type": "TVEpisode",
+            "name": "Sailor Moon Crystal (ITA) Episodio 1",
+            "alternateName": "Pretty Guardian Sailor Moon Crystal (ITA) Episodio 1",
+            "episodeNumber": "1",
+            "partOfSeries": {
+              "@type": "TVSeries",
+              "name": "Sailor Moon Crystal (ITA)",
+              "alternateName": "Pretty Guardian Sailor Moon Crystal (ITA)"
+            }
+          }
+        ],
+        "available_episode_numbers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "episode_entries": [
+        {
+          "number": 1,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/oXZDl",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 2,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/WR6qm",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 3,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/xaK6E",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 4,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/6l7uN",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 5,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/gx9QP",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 6,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/KPsCo",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 7,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/8Ul5n",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 8,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/EzdVk",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 9,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/VPbcK",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 10,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/VtPpE",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 11,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/XSIiA",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 12,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/jKBkC",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 13,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/YLhUw",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 14,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/COhLT",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 15,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/yM5s3",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 16,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/EEtSB",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 17,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/2qg8_",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 18,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/bohiS",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 19,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/oYsXB",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 20,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/2Xd4Z",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 21,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/nGlAF",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 22,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/CKZ3-",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 23,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/GsCBH",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 24,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/bjMR_",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 25,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/5vTvd",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 26,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/hgRNd",
+          "provenance": "observed:catalog_episode_list"
+        }
+      ],
+      "limitations": [
+        "JSON-LD datePublished is retained as publication metadata, never assumed episode air date.",
+        "Player URLs and media resources are not extracted or requested."
+      ]
+    },
+    {
+      "schema_version": 1,
+      "requested_url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/COhLT",
+      "fetched_at": "2026-09-14T14:08:38.598331+00:00",
+      "raw": {
+        "title": "Sailor Moon Crystal (ITA)",
+        "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/COhLT",
+        "fields": [
+          {
+            "label": "Tipo:",
+            "value": "DUB ONA"
+          },
+          {
+            "label": "Stato:",
+            "value": "Finito"
+          },
+          {
+            "label": "Anno:",
+            "value": "2014"
+          },
+          {
+            "label": "Categoria:",
+            "value": "ONA"
+          },
+          {
+            "label": "Audio:",
+            "value": "Italiano"
+          },
+          {
+            "label": "Data di Uscita:",
+            "value": "05 Luglio 2014"
+          },
+          {
+            "label": "Stagione:",
+            "value": "Estate 2014"
+          },
+          {
+            "label": "Episodi:",
+            "value": "26"
+          },
+          {
+            "label": "Stato:",
+            "value": "Finito"
+          }
+        ],
+        "structured": [
+          {
+            "@type": "TVEpisode",
+            "name": "Sailor Moon Crystal (ITA) Episodio 14",
+            "alternateName": "Pretty Guardian Sailor Moon Crystal (ITA) Episodio 14",
+            "episodeNumber": "14",
+            "partOfSeries": {
+              "@type": "TVSeries",
+              "name": "Sailor Moon Crystal (ITA)",
+              "alternateName": "Pretty Guardian Sailor Moon Crystal (ITA)"
+            }
+          }
+        ],
+        "available_episode_numbers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "episode_entries": [
+        {
+          "number": 1,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/oXZDl",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 2,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/WR6qm",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 3,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/xaK6E",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 4,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/6l7uN",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 5,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/gx9QP",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 6,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/KPsCo",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 7,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/8Ul5n",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 8,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/EzdVk",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 9,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/VPbcK",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 10,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/VtPpE",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 11,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/XSIiA",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 12,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/jKBkC",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 13,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/YLhUw",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 14,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/COhLT",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 15,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/yM5s3",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 16,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/EEtSB",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 17,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/2qg8_",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 18,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/bohiS",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 19,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/oYsXB",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 20,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/2Xd4Z",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 21,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/nGlAF",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 22,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/CKZ3-",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 23,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/GsCBH",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 24,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/bjMR_",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 25,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/5vTvd",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 26,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/hgRNd",
+          "provenance": "observed:catalog_episode_list"
+        }
+      ],
+      "limitations": [
+        "JSON-LD datePublished is retained as publication metadata, never assumed episode air date.",
+        "Player URLs and media resources are not extracted or requested."
+      ]
+    },
+    {
+      "schema_version": 1,
+      "requested_url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/yM5s3",
+      "fetched_at": "2026-09-14T14:08:39.024874+00:00",
+      "raw": {
+        "title": "Sailor Moon Crystal (ITA)",
+        "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/yM5s3",
+        "fields": [
+          {
+            "label": "Tipo:",
+            "value": "DUB ONA"
+          },
+          {
+            "label": "Stato:",
+            "value": "Finito"
+          },
+          {
+            "label": "Anno:",
+            "value": "2014"
+          },
+          {
+            "label": "Categoria:",
+            "value": "ONA"
+          },
+          {
+            "label": "Audio:",
+            "value": "Italiano"
+          },
+          {
+            "label": "Data di Uscita:",
+            "value": "05 Luglio 2014"
+          },
+          {
+            "label": "Stagione:",
+            "value": "Estate 2014"
+          },
+          {
+            "label": "Episodi:",
+            "value": "26"
+          },
+          {
+            "label": "Stato:",
+            "value": "Finito"
+          }
+        ],
+        "structured": [
+          {
+            "@type": "TVEpisode",
+            "name": "Sailor Moon Crystal (ITA) Episodio 15",
+            "alternateName": "Pretty Guardian Sailor Moon Crystal (ITA) Episodio 15",
+            "episodeNumber": "15",
+            "partOfSeries": {
+              "@type": "TVSeries",
+              "name": "Sailor Moon Crystal (ITA)",
+              "alternateName": "Pretty Guardian Sailor Moon Crystal (ITA)"
+            }
+          }
+        ],
+        "available_episode_numbers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "episode_entries": [
+        {
+          "number": 1,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/oXZDl",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 2,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/WR6qm",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 3,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/xaK6E",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 4,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/6l7uN",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 5,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/gx9QP",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 6,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/KPsCo",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 7,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/8Ul5n",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 8,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/EzdVk",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 9,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/VPbcK",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 10,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/VtPpE",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 11,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/XSIiA",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 12,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/jKBkC",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 13,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/YLhUw",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 14,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/COhLT",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 15,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/yM5s3",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 16,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/EEtSB",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 17,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/2qg8_",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 18,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/bohiS",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 19,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/oYsXB",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 20,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/2Xd4Z",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 21,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/nGlAF",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 22,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/CKZ3-",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 23,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/GsCBH",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 24,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/bjMR_",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 25,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/5vTvd",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 26,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/hgRNd",
+          "provenance": "observed:catalog_episode_list"
+        }
+      ],
+      "limitations": [
+        "JSON-LD datePublished is retained as publication metadata, never assumed episode air date.",
+        "Player URLs and media resources are not extracted or requested."
+      ]
+    },
+    {
+      "schema_version": 1,
+      "requested_url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/hgRNd",
+      "fetched_at": "2026-09-14T14:08:39.404774+00:00",
+      "raw": {
+        "title": "Sailor Moon Crystal (ITA)",
+        "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/hgRNd",
+        "fields": [
+          {
+            "label": "Tipo:",
+            "value": "DUB ONA"
+          },
+          {
+            "label": "Stato:",
+            "value": "Finito"
+          },
+          {
+            "label": "Anno:",
+            "value": "2014"
+          },
+          {
+            "label": "Categoria:",
+            "value": "ONA"
+          },
+          {
+            "label": "Audio:",
+            "value": "Italiano"
+          },
+          {
+            "label": "Data di Uscita:",
+            "value": "05 Luglio 2014"
+          },
+          {
+            "label": "Stagione:",
+            "value": "Estate 2014"
+          },
+          {
+            "label": "Episodi:",
+            "value": "26"
+          },
+          {
+            "label": "Stato:",
+            "value": "Finito"
+          }
+        ],
+        "structured": [
+          {
+            "@type": "TVEpisode",
+            "name": "Sailor Moon Crystal (ITA) Episodio 26",
+            "alternateName": "Pretty Guardian Sailor Moon Crystal (ITA) Episodio 26",
+            "episodeNumber": "26",
+            "partOfSeries": {
+              "@type": "TVSeries",
+              "name": "Sailor Moon Crystal (ITA)",
+              "alternateName": "Pretty Guardian Sailor Moon Crystal (ITA)"
+            }
+          }
+        ],
+        "available_episode_numbers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ]
+      },
+      "episode_entries": [
+        {
+          "number": 1,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/oXZDl",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 2,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/WR6qm",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 3,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/xaK6E",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 4,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/6l7uN",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 5,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/gx9QP",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 6,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/KPsCo",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 7,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/8Ul5n",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 8,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/EzdVk",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 9,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/VPbcK",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 10,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/VtPpE",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 11,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/XSIiA",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 12,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/jKBkC",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 13,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/YLhUw",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 14,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/COhLT",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 15,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/yM5s3",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 16,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/EEtSB",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 17,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/2qg8_",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 18,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/bohiS",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 19,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/oYsXB",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 20,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/2Xd4Z",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 21,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/nGlAF",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 22,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/CKZ3-",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 23,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/GsCBH",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 24,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/bjMR_",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 25,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/5vTvd",
+          "provenance": "observed:catalog_episode_list"
+        },
+        {
+          "number": 26,
+          "url": "https://www.animeworld.ac/play/bishoujo-senshi-sailor-moon-crystal-ita.QcRlc/hgRNd",
+          "provenance": "observed:catalog_episode_list"
+        }
+      ],
+      "limitations": [
+        "JSON-LD datePublished is retained as publication metadata, never assumed episode air date.",
+        "Player URLs and media resources are not extracted or requested."
+      ]
+    }
+  ]
+}

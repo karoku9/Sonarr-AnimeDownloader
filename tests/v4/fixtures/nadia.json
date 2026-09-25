@@ -1,0 +1,30 @@
+{
+  "target": {
+    "canonical_title": "Nadia: The Secret of Blue Water",
+    "season_number": 1,
+    "alternate_titles": [
+      {
+        "text": "Nadia - Il mistero della pietra azzurra",
+        "language": "it",
+        "kind": "localized",
+        "season_number": 1
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "id": "nadia",
+      "canonical_title": "Nadia - Il mistero della pietra azzurra (ITA)",
+      "season_number": 1,
+      "url": "https://catalog.example/nadia",
+      "audio": "DUB"
+    },
+    {
+      "id": "radiant",
+      "canonical_title": "Radiant",
+      "season_number": 1,
+      "url": "https://catalog.example/radiant",
+      "audio": "DUB"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "target": {
+    "canonical_title": "Ranma ½",
+    "season_number": 1,
+    "release_year": 1989
+  },
+  "candidates": [
+    {
+      "id": "original",
+      "canonical_title": "Ranma 1/2 (ITA)",
+      "season_number": 1,
+      "release_year": 1989,
+      "url": "https://catalog.example/ranma-original"
+    },
+    {
+      "id": "remake",
+      "canonical_title": "Ranma ½",
+      "season_number": 1,
+      "release_year": 2024,
+      "url": "https://catalog.example/ranma-remake"
+    }
+  ]
+}

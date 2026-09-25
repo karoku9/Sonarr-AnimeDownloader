@@ -1,20 +1,26 @@
-version: '3.9'
+name: anidown-v4
+
 services:
-  mainkronos:
-    container_name: AnimeDownloader
-    volumes:
-      - './database:/src/database'
-      - './script:/src/script'
-      - './downloads:/downloads'
+  anidown-v4:
+    profiles: [v4-preview]
+    build:
+      context: ..
+      dockerfile: Dockerfile.v4
+    image: anidown-v4:latest
+    container_name: anidown-v4
     ports:
-      - '8573:5000'
-    environment:
-      - 'SONARR_URL=http://192.168.1.11:8082'
-      - 'ANIMEWORLD_URL=https://www.animeworld.ac'
-      - API_KEY=f10994e9f3494368a31a3088aba6b9fc
-      - TZ=Europe/Rome
-      - PUID:1000
-      - PGID:1000
-    image: 'anime_downloader:dev'
-    build: '../'
-    # user: "1000:1000"
+      - "127.0.0.1:6004:6004"
+    volumes:
+      - v4-application:/app/work/phase8
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: "no"
+
+volumes:
+  v4-application:
+    name: anidown-v4-application

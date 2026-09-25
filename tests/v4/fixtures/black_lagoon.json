@@ -1,0 +1,32 @@
+{
+  "target": {
+    "canonical_title": "Black Lagoon",
+    "season_number": 1,
+    "alternate_titles": [
+      {
+        "text": "Burakku Ragun",
+        "language": "romaji"
+      },
+      {
+        "text": "Black Lagoon: The Second Barrage",
+        "season_number": 2
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "id": "bl1",
+      "canonical_title": "Black Lagoon (ITA)",
+      "season_number": 1,
+      "url": "https://catalog.example/black-lagoon",
+      "audio": "DUB"
+    },
+    {
+      "id": "bl2",
+      "canonical_title": "Black Lagoon: The Second Barrage (ITA)",
+      "season_number": 2,
+      "url": "https://catalog.example/second-barrage",
+      "audio": "DUB"
+    }
+  ]
+}

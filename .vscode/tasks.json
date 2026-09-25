@@ -1,6 +1,4 @@
 {
-	// See https://go.microsoft.com/fwlink/?LinkId=733558
-	// for the documentation about the tasks.json format
 	"version": "2.0.0",
 	"tasks": [
 		{
@@ -9,36 +7,22 @@
 			"dependsOn": ["docker-build"],
 			"dockerRun": {
 				"containerName": "AnimeDownloader",
-				// "remove": true,
 				"os": "Linux",
 				"image": "mainkronos/anime_downloader:latest",
 				"env": {
-					"SONARR_URL":"http://192.168.1.11:8989",
-					"API_KEY":"f10994e9f3494368a31a3088aba6b9fc",
-					"TZ":"Europe/Rome",
-					"PUID":"1000",
-					"PGID":"1000"
+					"SONARR_URL": "${env:ANIDOWN_LEGACY_SONARR_URL}",
+					"API_KEY": "${env:ANIDOWN_LEGACY_SONARR_API_KEY}",
+					"TZ": "Europe/Rome",
+					"PUID": "1000",
+					"PGID": "1000"
 				},
-				"ports": [
-					{
-						"containerPort": 5000,
-						"hostPort": 8573
-					}
-				],
+				"ports": [{"containerPort": 5000, "hostPort": 8573}],
 				"volumes": [
-					{
-						"containerPath": "/script/json/",
-						"localPath": "${workspaceFolder}/documentation/examples/json"
-					},
-					{
-						"containerPath": "/script/connections/",
-						"localPath": "${workspaceFolder}/documentation/examples/connections"
-					}
+					{"containerPath": "/script/json/", "localPath": "${workspaceFolder}/documentation/examples/json"},
+					{"containerPath": "/script/connections/", "localPath": "${workspaceFolder}/documentation/examples/connections"}
 				]
 			},
-			"python": {
-				"file": "main.py"
-			}
+			"python": {"file": "main.py"}
 		},
 		{
 			"label": "docker-build",
@@ -46,32 +30,26 @@
 			"dockerBuild": {
 				"context": "${workspaceFolder}",
 				"dockerfile": "${workspaceFolder}/Dockerfile",
-				"tag": "mainkronos/anime_downloader:latest",
-				// "customOptions": "--no-cache"
+				"tag": "mainkronos/anime_downloader:latest"
 			}
 		},
 		{
 			"label": "Type Check",
 			"type": "shell",
 			"command": "python -m mypy",
-			"args": [
-				"${workspaceFolder}/src",
-				"--show-column-numbers",
-				"--show-error-end",
-				"--no-incremental"
-			],
+			"args": ["${workspaceFolder}/src", "--show-column-numbers", "--show-error-end", "--no-incremental"],
 			"problemMatcher": {
 				"owner": "mypy",
 				"fileLocation": ["relative", "${workspaceFolder}"],
 				"pattern": {
-				  "regexp": "^(.*?):(\\d+):(\\d+):(\\d+):(\\d+):\\s+(warning|error|note):\\s+(.*)$",
-				  "file": 1,
-				  "line": 2,
-				  "column": 3,
-				  "endLine": 4,
-				  "endColumn": 5,
-				  "severity": 6,
-				  "message": 7
+					"regexp": "^(.*?):(\\d+):(\\d+):(\\d+):(\\d+):\\s+(warning|error|note):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"endLine": 4,
+					"endColumn": 5,
+					"severity": 6,
+					"message": 7
 				}
 			},
 			"group": "build"

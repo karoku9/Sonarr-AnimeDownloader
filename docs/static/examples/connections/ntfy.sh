@@ -1,23 +1,14 @@
 #!/bin/sh
+set -eu
 
-################################################################
+: "${ANIDOWN_NTFY_BASE_URL:?set ANIDOWN_NTFY_BASE_URL}"
+: "${ANIDOWN_NTFY_TOKEN:?set ANIDOWN_NTFY_TOKEN}"
+: "${ANIDOWN_NTFY_TOPIC:?set ANIDOWN_NTFY_TOPIC}"
 
-BASE_URL="http://ntfy.sh" # URL del servizio ntfy (può essere anche self-hosted)
-TOKEN="12345676890abcdefg" # Token del topic ntfy
-TOPIC="your-ntfy-topic" # Nome del topic ntfy
-PRIORITA="low" # high, normal, low
-ICONA="http://path/to/icon.png" # URL di un'icona
-TAG="loudspeaker,anime,new-download" # I tuoi tags (la prima, secondo le specifiche, sarà l'emoji della notifica)
-MESSAGGIO="$1"
-
-################################################################
-
-curl -X POST "$BASE_URL/$TOPIC" \
-     -H "Authorization: Bearer $TOKEN" \
-     -H "Title: $TITOLO" \
-     -H "Priority: $PRIORITA" \
-     -H "Icon: $ICONA" \
-     -H "Tag: $TAG" \
-     -H "Markdown: yes" \
-     -d "$MESSAGGIO" \
-     --silent --output /dev/null
+curl -X POST "$ANIDOWN_NTFY_BASE_URL/$ANIDOWN_NTFY_TOPIC" \
+  -H "Authorization: Bearer $ANIDOWN_NTFY_TOKEN" \
+  -H "Title: Sonarr - Anime Downloader" \
+  -H "Priority: low" \
+  -H "Markdown: yes" \
+  -d "$1" \
+  --silent --show-error --output /dev/null

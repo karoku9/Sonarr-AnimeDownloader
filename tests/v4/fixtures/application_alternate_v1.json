@@ -1,0 +1,3517 @@
+{
+  "schema_version": 1,
+  "kind": "stable_sanitized_production_subset",
+  "source_parent_sha256": "5ea72d5b21cc1d3ade79947765fa4f284752c7f9f9f4a60776224cf4a7bcbf04",
+  "ground_truth": null,
+  "cases": [
+    {
+      "cohort": "production",
+      "raw": {
+        "sonarr_series": {
+          "id": 73,
+          "title": "Chainsaw Man",
+          "cleanTitle": "chainsawman",
+          "sortTitle": "chainsaw man",
+          "year": 2022,
+          "firstAired": "2022-10-12T00:00:00Z",
+          "seriesType": "anime",
+          "status": "ended",
+          "ended": true,
+          "tvdbId": 397934,
+          "imdbId": "tt13616990",
+          "tvMazeId": 63451,
+          "alternateTitles": [],
+          "seasons": [
+            {
+              "seasonNumber": 0,
+              "statistics": {
+                "episodeCount": 0,
+                "totalEpisodeCount": 8
+              }
+            },
+            {
+              "seasonNumber": 1,
+              "statistics": {
+                "previousAiring": "2022-12-27T15:00:00Z",
+                "episodeCount": 12,
+                "totalEpisodeCount": 12
+              }
+            }
+          ]
+        },
+        "sonarr_season": {
+          "seasonNumber": 1,
+          "statistics": {
+            "previousAiring": "2022-12-27T15:00:00Z",
+            "episodeCount": 12,
+            "totalEpisodeCount": 12
+          }
+        },
+        "sonarr_episodes": [
+          {
+            "seasonNumber": 1,
+            "episodeNumber": 1,
+            "absoluteEpisodeNumber": 1,
+            "airDate": "2022-10-12",
+            "airDateUtc": "2022-10-11T15:00:00Z"
+          },
+          {
+            "seasonNumber": 1,
+            "episodeNumber": 2,
+            "absoluteEpisodeNumber": 2,
+            "airDate": "2022-10-19",
+            "airDateUtc": "2022-10-18T15:00:00Z"
+          },
+          {
+            "seasonNumber": 1,
+            "episodeNumber": 3,
+            "absoluteEpisodeNumber": 3,
+            "airDate": "2022-10-26",
+            "airDateUtc": "2022-10-25T15:00:00Z"
+          },
+          {
+            "seasonNumber": 1,
+            "episodeNumber": 4,
+            "absoluteEpisodeNumber": 4,
+            "airDate": "2022-11-02",
+            "airDateUtc": "2022-11-01T15:00:00Z"
+          },
+          {
+            "seasonNumber": 1,
+            "episodeNumber": 5,
+            "absoluteEpisodeNumber": 5,
+            "airDate": "2022-11-09",
+            "airDateUtc": "2022-11-08T15:00:00Z"
+          },
+          {
+            "seasonNumber": 1,
+            "episodeNumber": 6,
+            "absoluteEpisodeNumber": 6,
+            "airDate": "2022-11-16",
+            "airDateUtc": "2022-11-15T15:00:00Z"
+          },
+          {
+            "seasonNumber": 1,
+            "episodeNumber": 7,
+            "absoluteEpisodeNumber": 7,
+            "airDate": "2022-11-23",
+            "airDateUtc": "2022-11-22T15:00:00Z"
+          },
+          {
+            "seasonNumber": 1,
+            "episodeNumber": 8,
+            "absoluteEpisodeNumber": 8,
+            "airDate": "2022-11-30",
+            "airDateUtc": "2022-11-29T15:00:00Z"
+          },
+          {
+            "seasonNumber": 1,
+            "episodeNumber": 9,
+            "absoluteEpisodeNumber": 9,
+            "airDate": "2022-12-07",
+            "airDateUtc": "2022-12-06T15:00:00Z"
+          },
+          {
+            "seasonNumber": 1,
+            "episodeNumber": 10,
+            "absoluteEpisodeNumber": 10,
+            "airDate": "2022-12-14",
+            "airDateUtc": "2022-12-13T15:00:00Z"
+          },
+          {
+            "seasonNumber": 1,
+            "episodeNumber": 11,
+            "absoluteEpisodeNumber": 11,
+            "airDate": "2022-12-21",
+            "airDateUtc": "2022-12-20T15:00:00Z"
+          },
+          {
+            "seasonNumber": 1,
+            "episodeNumber": 12,
+            "absoluteEpisodeNumber": 12,
+            "airDate": "2022-12-28",
+            "airDateUtc": "2022-12-27T15:00:00Z"
+          }
+        ],
+        "catalog_entries": [
+          {
+            "title": "Chainsaw Man (ITA)",
+            "url": "https://www.animeworld.ac/play/chainsaw-man-ita.ae6ab",
+            "audio": "DUB",
+            "aliases": [
+              "Chainsaw Man (ITA)"
+            ],
+            "year": null,
+            "source": "animeworld_catalog",
+            "table_titles": [],
+            "table_seasons": [],
+            "slug": "chainsaw-man-ita"
+          },
+          {
+            "title": "Chainsaw Man: The Compilation",
+            "url": "https://www.animeworld.ac/play/chainsaw-man-the-compilation.BCukG",
+            "audio": "SUB",
+            "aliases": [
+              "Chainsaw Man: The Compilation"
+            ],
+            "year": null,
+            "source": "animeworld_catalog",
+            "table_titles": [],
+            "table_seasons": [],
+            "slug": "chainsaw-man-the-compilation"
+          },
+          {
+            "title": "Iron Man",
+            "url": "https://www.animeworld.ac/play/iron-man.iSMhO",
+            "audio": "SUB",
+            "aliases": [
+              "Iron Man"
+            ],
+            "year": null,
+            "source": "animeworld_catalog",
+            "table_titles": [],
+            "table_seasons": [],
+            "slug": "iron-man"
+          },
+          {
+            "title": "Calendar Men (ITA)",
+            "url": "https://www.animeworld.ac/play/calendar-men-ita.8PZUP",
+            "audio": "DUB",
+            "aliases": [
+              "Calendar Men (ITA)"
+            ],
+            "year": null,
+            "source": "animeworld_catalog",
+            "table_titles": [],
+            "table_seasons": [],
+            "slug": "calendar-men-ita"
+          },
+          {
+            "title": "Handa-kun",
+            "url": "https://www.animeworld.ac/play/handa-kun.81pvK",
+            "audio": "SUB",
+            "aliases": [
+              "Handa-kun"
+            ],
+            "year": null,
+            "source": "animeworld_catalog",
+            "table_titles": [],
+            "table_seasons": [],
+            "slug": "handa-kun"
+          },
+          {
+            "title": "Mechanical Marie",
+            "url": "https://www.animeworld.ac/play/mechanical-marie.SAZmN",
+            "audio": "SUB",
+            "aliases": [
+              "Mechanical Marie"
+            ],
+            "year": null,
+            "source": "animeworld_catalog",
+            "table_titles": [],
+            "table_seasons": [],
+            "slug": "mechanical-marie"
+          },
+          {
+            "title": "Chainsaw Man - The Movie: Reze Arc (ITA)",
+            "url": "https://www.animeworld.ac/play/chainsaw-man-the-movie-reze-arc-ita.bF45A",
+            "audio": "DUB",
+            "aliases": [
+              "Chainsaw Man - The Movie: Reze Arc (ITA)"
+            ],
+            "year": null,
+            "source": "animeworld_catalog",
+            "table_titles": [],
+            "table_seasons": [],
+            "slug": "chainsaw-man-the-movie-reze-arc-ita"
+          },
+          {
+            "title": "Chainsaw Man - The Movie: Reze Arc",
+            "url": "https://www.animeworld.ac/play/chainsaw-man-the-movie-reze-arc.m5Gv0",
+            "audio": "SUB",
+            "aliases": [
+              "Chainsaw Man - The Movie: Reze Arc"
+            ],
+            "year": null,
+            "source": "animeworld_catalog",
+            "table_titles": [],
+            "table_seasons": [],
+            "slug": "chainsaw-man-the-movie-reze-arc"
+          },
+          {
+            "title": "Chainsaw Man",
+            "url": "https://www.animeworld.ac/play/chainsaw-man.3EoJJ",
+            "audio": "UNKNOWN",
+            "aliases": [
+              "Chainsaw Man"
+            ],
+            "year": null,
+            "source": "table",
+            "table_titles": [
+              "Chainsaw Man"
+            ],
+            "table_seasons": [
+              "1"
+            ],
+            "slug": "chainsaw-man"
+          }
+        ],
+        "details": {
+          "https://www.animeworld.ac/play/chainsaw-man-ita.ae6ab": {
+            "schema_version": 1,
+            "source": "animeworld_detail",
+            "fetched_at": "2026-09-14T12:32:31.930679+00:00",
+            "content_sha256": "ece28d08522d129eaf139f7e4e31efb9f3fa3401604bcf9d3a2e3ae77c26309d",
+            "status": "ok",
+            "raw": {
+              "title": "Chainsaw Man (ITA)",
+              "url": "https://www.animeworld.ac/play/chainsaw-man-ita.ae6ab/YGKq7P",
+              "fields": [
+                {
+                  "label": "Tipo:",
+                  "value": "DUB Anime"
+                },
+                {
+                  "label": "Stato:",
+                  "value": "Finito"
+                },
+                {
+                  "label": "Anno:",
+                  "value": "2022"
+                },
+                {
+                  "label": "Categoria:",
+                  "value": "Anime"
+                },
+                {
+                  "label": "Audio:",
+                  "value": "Italiano"
+                },
+                {
+                  "label": "Data di Uscita:",
+                  "value": "12 Ottobre 2022"
+                },
+                {
+                  "label": "Stagione:",
+                  "value": "Autunno 2022"
+                },
+                {
+                  "label": "Episodi:",
+                  "value": "12"
+                },
+                {
+                  "label": "Stato:",
+                  "value": "Finito"
+                }
+              ],
+              "structured": [
+                {
+                  "@type": "TVEpisode",
+                  "name": "Chainsaw Man (ITA) Episodio 1",
+                  "alternateName": "Chainsaw Man (ITA) Episodio 1",
+                  "episodeNumber": "1",
+                  "partOfSeries": {
+                    "@type": "TVSeries",
+                    "name": "Chainsaw Man (ITA)",
+                    "alternateName": "Chainsaw Man (ITA)"
+                  }
+                }
+              ],
+              "available_episode_numbers": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
+            }
+          },
+          "https://www.animeworld.ac/play/chainsaw-man-the-compilation.BCukG": {
+            "schema_version": 1,
+            "source": "animeworld_detail",
+            "fetched_at": "2026-09-14T12:32:31.989741+00:00",
+            "content_sha256": "d7fe5e5fb5af791f0443e5f3166ac63617dd4e4746919879abc0904f45961c3b",
+            "status": "ok",
+            "raw": {
+              "title": "Chainsaw Man: The Compilation",
+              "url": "https://www.animeworld.ac/play/chainsaw-man-the-compilation.BCukG/omFfF8",
+              "fields": [
+                {
+                  "label": "Tipo:",
+                  "value": "Movie"
+                },
+                {
+                  "label": "Stato:",
+                  "value": "Finito"
+                },
+                {
+                  "label": "Anno:",
+                  "value": "2025"
+                },
+                {
+                  "label": "Categoria:",
+                  "value": "Movie"
+                },
+                {
+                  "label": "Audio:",
+                  "value": "Giapponese"
+                },
+                {
+                  "label": "Data di Uscita:",
+                  "value": "05 Settembre 2025"
+                },
+                {
+                  "label": "Stagione:",
+                  "value": "Estate 2025"
+                },
+                {
+                  "label": "Episodi:",
+                  "value": "2"
+                },
+                {
+                  "label": "Stato:",
+                  "value": "Finito"
+                }
+              ],
+              "structured": [
+                {
+                  "@type": "TVEpisode",
+                  "name": "Chainsaw Man: The Compilation Episodio 1",
+                  "alternateName": "Chainsaw Man Recap Episodio 1",
+                  "episodeNumber": "1",
+                  "partOfSeries": {
+                    "@type": "TVSeries",
+                    "name": "Chainsaw Man: The Compilation",
+                    "alternateName": "Chainsaw Man Recap"
+                  }
+                }
+              ],
+              "available_episode_numbers": [
+                1,
+                2
+              ]
+            }
+          },
+          "https://www.animeworld.ac/play/iron-man.iSMhO": {
+            "schema_version": 1,
+            "source": "animeworld_detail",
+            "fetched_at": "2026-09-14T12:33:26.015458+00:00",
+            "content_sha256": "66a7a5512ba64b9eb8436e426cb137aaa7ae3ca0007c85487b8e7ade7a66160b",
+            "status": "ok",
+            "raw": {
+              "title": "Iron Man",
+              "url": "https://www.animeworld.ac/play/iron-man.iSMhO/ByqHCy",
+              "fields": [
+                {
+                  "label": "Tipo:",
+                  "value": "Anime"
+                },
+                {
+                  "label": "Stato:",
+                  "value": "Finito"
+                },
+                {
+                  "label": "Anno:",
+                  "value": "2010"
+                },
+                {
+                  "label": "Categoria:",
+                  "value": "Anime"
+                },
+                {
+                  "label": "Audio:",
+                  "value": "Giapponese"
+                },
+                {
+                  "label": "Data di Uscita:",
+                  "value": "01 Ottobre 2010"
+                },
+                {
+                  "label": "Stagione:",
+                  "value": "Autunno 2010"
+                },
+                {
+                  "label": "Episodi:",
+                  "value": "12"
+                },
+                {
+                  "label": "Stato:",
+                  "value": "Finito"
+                }
+              ],
+              "structured": [
+                {
+                  "@type": "TVEpisode",
+                  "name": "Iron Man Episodio 1",
+                  "alternateName": "Iron Man Episodio 1",
+                  "episodeNumber": "1",
+                  "partOfSeries": {
+                    "@type": "TVSeries",
+                    "name": "Iron Man",
+                    "alternateName": "Iron Man"
+                  }
+                }
+              ],
+              "available_episode_numbers": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
+            }
+          },
+          "https://www.animeworld.ac/play/calendar-men-ita.8PZUP": {
+            "schema_version": 1,
+            "source": "animeworld_detail",
+            "fetched_at": "2026-09-14T12:32:29.604876+00:00",
+            "content_sha256": "07042da47a4aa70ad73e3e1f4dba275fda41475c84deb28a064872912c29099f",
+            "status": "ok",
+            "raw": {
+              "title": "Calendar Men (ITA)",
+              "url": "https://www.animeworld.ac/play/calendar-men-ita.8PZUP/Y5OlbA",
+              "fields": [
+                {
+                  "label": "Tipo:",
+                  "value": "DUB Anime"
+                },
+                {
+                  "label": "Stato:",
+                  "value": "Finito"
+                },
+                {
+                  "label": "Anno:",
+                  "value": "1981"
+                },
+                {
+                  "label": "Categoria:",
+                  "value": "Anime"
+                },
+                {
+                  "label": "Audio:",
+                  "value": "Italiano"
+                },
+                {
+                  "label": "Data di Uscita:",
+                  "value": "07 Febbraio 1981"
+                },
+                {
+                  "label": "Stagione:",
+                  "value": "Inverno 1981"
+                },
+                {
+                  "label": "Episodi:",
+                  "value": "52"
+                },
+                {
+                  "label": "Stato:",
+                  "value": "Finito"
+                }
+              ],
+              "structured": [
+                {
+                  "@type": "TVEpisode",
+                  "name": "Calendar Men (ITA) Episodio 1",
+                  "alternateName": "Time Bokan Series: Yattodetaman (ITA) Episodio 1",
+                  "episodeNumber": "1",
+                  "partOfSeries": {
+                    "@type": "TVSeries",
+                    "name": "Calendar Men (ITA)",
+                    "alternateName": "Time Bokan Series: Yattodetaman (ITA)"
+                  }
+                }
+              ],
+              "available_episode_numbers": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52
+              ]
+            }
+          },
+          "https://www.animeworld.ac/play/handa-kun.81pvK": {
+            "schema_version": 1,
+            "source": "animeworld_detail",
+            "fetched_at": "2026-09-14T12:33:12.194289+00:00",
+            "content_sha256": "eacb19995e8164ad50c313fe2c39fd09c6f62fe7137e4d0d615a986ff6b9dc62",
+            "status": "ok",
+            "raw": {
+              "title": "Handa-kun",
+              "url": "https://www.animeworld.ac/play/handa-kun.81pvK/ouUqi",
+              "fields": [
+                {
+                  "label": "Tipo:",
+                  "value": "Anime"
+                },
+                {
+                  "label": "Stato:",
+                  "value": "Finito"
+                },
+                {
+                  "label": "Anno:",
+                  "value": "2016"
+                },
+                {
+                  "label": "Categoria:",
+                  "value": "Anime"
+                },
+                {
+                  "label": "Audio:",
+                  "value": "Giapponese"
+                },
+                {
+                  "label": "Data di Uscita:",
+                  "value": "08 Luglio 2016"
+                },
+                {
+                  "label": "Stagione:",
+                  "value": "Estate 2016"
+                },
+                {
+                  "label": "Episodi:",
+                  "value": "12"
+                },
+                {
+                  "label": "Stato:",
+                  "value": "Finito"
+                }
+              ],
+              "structured": [],
+              "available_episode_numbers": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
+            }
+          },
+          "https://www.animeworld.ac/play/mechanical-marie.SAZmN": {
+            "schema_version": 1,
+            "source": "animeworld_detail",
+            "fetched_at": "2026-09-14T12:33:58.516546+00:00",
+            "content_sha256": "4a4cb245f0cc2a18c338c6799bce382d5e02a721ff2761a736c4c3d268da55e6",
+            "status": "ok",
+            "raw": {
+              "title": "Mechanical Marie",
+              "url": "https://www.animeworld.ac/play/mechanical-marie.SAZmN/JNRlnG",
+              "fields": [
+                {
+                  "label": "Tipo:",
+                  "value": "Anime"
+                },
+                {
+                  "label": "Stato:",
+                  "value": "Finito"
+                },
+                {
+                  "label": "Anno:",
+                  "value": "2025"
+                },
+                {
+                  "label": "Categoria:",
+                  "value": "Anime"
+                },
+                {
+                  "label": "Audio:",
+                  "value": "Giapponese"
+                },
+                {
+                  "label": "Data di Uscita:",
+                  "value": "05 Ottobre 2025"
+                },
+                {
+                  "label": "Stagione:",
+                  "value": "Autunno 2025"
+                },
+                {
+                  "label": "Episodi:",
+                  "value": "12"
+                },
+                {
+                  "label": "Stato:",
+                  "value": "Finito"
+                }
+              ],
+              "structured": [
+                {
+                  "@type": "TVEpisode",
+                  "name": "Mechanical Marie Episodio 1",
+                  "alternateName": "Kikaijikake no Marie Episodio 1",
+                  "episodeNumber": "1",
+                  "partOfSeries": {
+                    "@type": "TVSeries",
+                    "name": "Mechanical Marie",
+                    "alternateName": "Kikaijikake no Marie"
+                  }
+                }
+              ],
+              "available_episode_numbers": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
+            }
+          },
+          "https://www.animeworld.ac/play/chainsaw-man-the-movie-reze-arc-ita.bF45A": {
+            "schema_version": 1,
+            "source": "animeworld_detail",
+            "fetched_at": "2026-09-14T12:32:32.234182+00:00",
+            "content_sha256": "9f0cd2bd7e77c0d2e87d3d719076746429ef863d9bc61b293027ab7fce857690",
+            "status": "ok",
+            "raw": {
+              "title": "Chainsaw Man - The Movie: Reze Arc (ITA)",
+              "url": "https://www.animeworld.ac/play/chainsaw-man-the-movie-reze-arc-ita.bF45A/MAEtLG",
+              "fields": [
+                {
+                  "label": "Tipo:",
+                  "value": "DUB Movie"
+                },
+                {
+                  "label": "Stato:",
+                  "value": "Finito"
+                },
+                {
+                  "label": "Anno:",
+                  "value": "2025"
+                },
+                {
+                  "label": "Categoria:",
+                  "value": "Movie"
+                },
+                {
+                  "label": "Audio:",
+                  "value": "Italiano"
+                },
+                {
+                  "label": "Data di Uscita:",
+                  "value": "19 Settembre 2025"
+                },
+                {
+                  "label": "Stagione:",
+                  "value": "Estate 2025"
+                },
+                {
+                  "label": "Episodi:",
+                  "value": "1"
+                },
+                {
+                  "label": "Stato:",
+                  "value": "Finito"
+                }
+              ],
+              "structured": [
+                {
+                  "@type": "TVEpisode",
+                  "name": "Chainsaw Man - The Movie: Reze Arc (ITA) Episodio 1",
+                  "alternateName": "Chainsaw Man Movie: Reze-hen (ITA) Episodio 1",
+                  "episodeNumber": "1",
+                  "partOfSeries": {
+                    "@type": "TVSeries",
+                    "name": "Chainsaw Man - The Movie: Reze Arc (ITA)",
+                    "alternateName": "Chainsaw Man Movie: Reze-hen (ITA)"
+                  }
+                }
+              ],
+              "available_episode_numbers": [
+                1
+              ]
+            }
+          },
+          "https://www.animeworld.ac/play/chainsaw-man-the-movie-reze-arc.m5Gv0": {
+            "schema_version": 1,
+            "source": "animeworld_detail",
+            "fetched_at": "2026-09-14T12:32:32.284115+00:00",
+            "content_sha256": "f0da518c832099a638ed89dbef7742b66484c4ea5ebf2c428615dc26b0954091",
+            "status": "ok",
+            "raw": {
+              "title": "Chainsaw Man - The Movie: Reze Arc",
+              "url": "https://www.animeworld.ac/play/chainsaw-man-the-movie-reze-arc.m5Gv0/-MLqVo",
+              "fields": [
+                {
+                  "label": "Tipo:",
+                  "value": "Movie"
+                },
+                {
+                  "label": "Stato:",
+                  "value": "Finito"
+                },
+                {
+                  "label": "Anno:",
+                  "value": "2025"
+                },
+                {
+                  "label": "Categoria:",
+                  "value": "Movie"
+                },
+                {
+                  "label": "Audio:",
+                  "value": "Giapponese"
+                },
+                {
+                  "label": "Data di Uscita:",
+                  "value": "19 Settembre 2025"
+                },
+                {
+                  "label": "Stagione:",
+                  "value": "Estate 2025"
+                },
+                {
+                  "label": "Episodi:",
+                  "value": "1"
+                },
+                {
+                  "label": "Stato:",
+                  "value": "Finito"
+                }
+              ],
+              "structured": [
+                {
+                  "@type": "TVEpisode",
+                  "name": "Chainsaw Man - The Movie: Reze Arc Episodio 1",
+                  "alternateName": "Chainsaw Man Movie: Reze-hen Episodio 1",
+                  "episodeNumber": "1",
+                  "partOfSeries": {
+                    "@type": "TVSeries",
+                    "name": "Chainsaw Man - The Movie: Reze Arc",
+                    "alternateName": "Chainsaw Man Movie: Reze-hen"
+                  }
+                }
+              ],
+              "available_episode_numbers": [
+                1
+              ]
+            }
+          },
+          "https://www.animeworld.ac/play/chainsaw-man.3EoJJ": {
+            "schema_version": 1,
+            "source": "animeworld_detail",
+            "fetched_at": "2026-09-14T12:32:33.216734+00:00",
+            "content_sha256": "0e6d1d80302fab7f150d82a6150107f36b1c5ba3ab6cfec56a99e8a9bd8526f4",
+            "status": "ok",
+            "raw": {
+              "title": "Chainsaw Man",
+              "url": "https://www.animeworld.ac/play/chainsaw-man.3EoJJ/HhLOwe",
+              "fields": [
+                {
+                  "label": "Tipo:",
+                  "value": "Anime"
+                },
+                {
+                  "label": "Stato:",
+                  "value": "Finito"
+                },
+                {
+                  "label": "Anno:",
+                  "value": "2022"
+                },
+                {
+                  "label": "Categoria:",
+                  "value": "Anime"
+                },
+                {
+                  "label": "Audio:",
+                  "value": "Giapponese"
+                },
+                {
+                  "label": "Data di Uscita:",
+                  "value": "11 Ottobre 2022"
+                },
+                {
+                  "label": "Stagione:",
+                  "value": "Autunno 2022"
+                },
+                {
+                  "label": "Episodi:",
+                  "value": "12"
+                },
+                {
+                  "label": "Stato:",
+                  "value": "Finito"
+                }
+              ],
+              "structured": [
+                {
+                  "@type": "TVEpisode",
+                  "name": "Chainsaw Man Episodio 1",
+                  "alternateName": "Chainsaw Man Episodio 1",
+                  "episodeNumber": "1",
+                  "partOfSeries": {
+                    "@type": "TVSeries",
+                    "name": "Chainsaw Man",
+                    "alternateName": "Chainsaw Man"
+                  }
+                }
+              ],
+              "available_episode_numbers": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+              ]
+            }
+          }
+        },
+        "manual_aliases": []
+      },
+      "derived": {
+        "target": {
+          "alternate_titles": [],
+          "season_number": 1,
+          "scene_season_number": null,
+          "season_namespace": "sonarr",
+          "target_seasons": [],
+          "premiere_date": null,
+          "air_date": "2022-10-12",
+          "release_year": 2022,
+          "date_kind": "original_release",
+          "episode_count": 12,
+          "episodes_complete": true,
+          "episode_scope": "season",
+          "external_ids": [
+            [
+              "tvdbId",
+              "397934"
+            ],
+            [
+              "imdbId",
+              "tt13616990"
+            ],
+            [
+              "tvMazeId",
+              "63451"
+            ]
+          ],
+          "source": {
+            "name": "sonarr_series",
+            "record_id": "73",
+            "reliable": true,
+            "fetched_at": null,
+            "attributes": []
+          },
+          "field_provenance": [
+            {
+              "field": "air_date",
+              "value": "2022-10-12",
+              "source": {
+                "name": "sonarr_episode",
+                "record_id": "73:1:1",
+                "reliable": true,
+                "fetched_at": null,
+                "attributes": []
+              },
+              "confidence": null,
+              "derived": false,
+              "implicit": false
+            },
+            {
+              "field": "canonical_title",
+              "value": "Chainsaw Man",
+              "source": {
+                "name": "sonarr_series",
+                "record_id": "73",
+                "reliable": true,
+                "fetched_at": null,
+                "attributes": []
+              },
+              "confidence": null,
+              "derived": false,
+              "implicit": true
+            },
+            {
+              "field": "date_kind",
+              "value": "original_release",
+              "source": {
+                "name": "sonarr_series",
+                "record_id": "73",
+                "reliable": true,
+                "fetched_at": null,
+                "attributes": []
+              },
+              "confidence": null,
+              "derived": false,
+              "implicit": true
+            },
+            {
+              "field": "episode_count",
+              "value": 12,
+              "source": {
+                "name": "sonarr_series",
+                "record_id": "73",
+                "reliable": true,
+                "fetched_at": null,
+                "attributes": []
+              },
+              "confidence": null,
+              "derived": false,
+              "implicit": true
+            },
+            {
+              "field": "episode_scope",
+              "value": "season",
+              "source": {
+                "name": "sonarr_series",
+                "record_id": "73",
+                "reliable": true,
+                "fetched_at": null,
+                "attributes": []
+              },
+              "confidence": null,
+              "derived": false,
+              "implicit": true
+            },
+            {
+              "field": "episodes_complete",
+              "value": true,
+              "source": {
+                "name": "sonarr_series",
+                "record_id": "73",
+                "reliable": true,
+                "fetched_at": null,
+                "attributes": []
+              },
+              "confidence": null,
+              "derived": false,
+              "implicit": true
+            },
+            {
+              "field": "external_ids",
+              "value": [
+                [
+                  "tvdbId",
+                  "397934"
+                ],
+                [
+                  "imdbId",
+                  "tt13616990"
+                ],
+                [
+                  "tvMazeId",
+                  "63451"
+                ]
+              ],
+              "source": {
+                "name": "sonarr_series",
+                "record_id": "73",
+                "reliable": true,
+                "fetched_at": null,
+                "attributes": []
+              },
+              "confidence": null,
+              "derived": false,
+              "implicit": true
+            },
+            {
+              "field": "release_year",
+              "value": 2022,
+              "source": {
+                "name": "sonarr_series",
+                "record_id": "73",
+                "reliable": true,
+                "fetched_at": null,
+                "attributes": []
+              },
+              "confidence": null,
+              "derived": false,
+              "implicit": true
+            },
+            {
+              "field": "season_namespace",
+              "value": "sonarr",
+              "source": {
+                "name": "sonarr_series",
+                "record_id": "73",
+                "reliable": true,
+                "fetched_at": null,
+                "attributes": []
+              },
+              "confidence": null,
+              "derived": false,
+              "implicit": true
+            },
+            {
+              "field": "season_number",
+              "value": 1,
+              "source": {
+                "name": "sonarr_series",
+                "record_id": "73",
+                "reliable": true,
+                "fetched_at": null,
+                "attributes": []
+              },
+              "confidence": null,
+              "derived": false,
+              "implicit": true
+            },
+            {
+              "field": "target_seasons",
+              "value": [],
+              "source": {
+                "name": "sonarr_series",
+                "record_id": "73",
+                "reliable": true,
+                "fetched_at": null,
+                "attributes": []
+              },
+              "confidence": null,
+              "derived": false,
+              "implicit": true
+            }
+          ],
+          "crosswalks": [],
+          "cour": null,
+          "part": null,
+          "canonical_title": "Chainsaw Man",
+          "audio_preference": "UNKNOWN",
+          "target_id": "73:1"
+        },
+        "candidates": [
+          {
+            "alternate_titles": [
+              {
+                "text": "Chainsaw Man (ITA)",
+                "language": null,
+                "kind": "provider_name",
+                "season_number": null,
+                "scene_season_number": null,
+                "scene_namespace": "sonarr",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c2278784774c23af",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                }
+              },
+              {
+                "text": "Chainsaw Man (ITA)",
+                "language": null,
+                "kind": "provider_alternateName",
+                "season_number": null,
+                "scene_season_number": null,
+                "scene_namespace": "sonarr",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c2278784774c23af",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                }
+              }
+            ],
+            "season_number": null,
+            "scene_season_number": null,
+            "season_namespace": "catalog",
+            "target_seasons": [],
+            "premiere_date": "2022-10-12",
+            "air_date": null,
+            "release_year": 2022,
+            "date_kind": "original_release",
+            "episode_count": 12,
+            "episodes_complete": true,
+            "episode_scope": "catalog_release",
+            "external_ids": [],
+            "source": {
+              "name": "animeworld_detail",
+              "record_id": "c2278784774c23af",
+              "reliable": true,
+              "fetched_at": null,
+              "attributes": []
+            },
+            "field_provenance": [
+              {
+                "field": "audio",
+                "value": "DUB",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c2278784774c23af",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "audio_language",
+                "value": "it",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c2278784774c23af",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "canonical_title",
+                "value": "Chainsaw Man (ITA)",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c2278784774c23af",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "date_kind",
+                "value": "original_release",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c2278784774c23af",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episode_count",
+                "value": 12,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c2278784774c23af",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episode_scope",
+                "value": "catalog_release",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c2278784774c23af",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episodes_complete",
+                "value": true,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c2278784774c23af",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "external_ids",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c2278784774c23af",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "mapped_seasons",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c2278784774c23af",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "premiere_date",
+                "value": "2022-10-12",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c2278784774c23af",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "release_year",
+                "value": 2022,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c2278784774c23af",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "season_coverage",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c2278784774c23af",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "season_namespace",
+                "value": "catalog",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c2278784774c23af",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "target_seasons",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c2278784774c23af",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              }
+            ],
+            "crosswalks": [],
+            "cour": null,
+            "part": null,
+            "id": "c2278784774c23af",
+            "canonical_title": "Chainsaw Man (ITA)",
+            "url": "https://www.animeworld.ac/play/chainsaw-man-ita.ae6ab",
+            "audio": "DUB",
+            "audio_language": "it",
+            "subtitle_language": null,
+            "release_id": null,
+            "mapped_seasons": [],
+            "season_coverage": []
+          },
+          {
+            "alternate_titles": [
+              {
+                "text": "Chainsaw Man: The Compilation",
+                "language": null,
+                "kind": "provider_name",
+                "season_number": null,
+                "scene_season_number": null,
+                "scene_namespace": "sonarr",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "38530864f58c0689",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                }
+              },
+              {
+                "text": "Chainsaw Man Recap",
+                "language": null,
+                "kind": "provider_alternateName",
+                "season_number": null,
+                "scene_season_number": null,
+                "scene_namespace": "sonarr",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "38530864f58c0689",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                }
+              }
+            ],
+            "season_number": null,
+            "scene_season_number": null,
+            "season_namespace": "catalog",
+            "target_seasons": [],
+            "premiere_date": "2025-09-05",
+            "air_date": null,
+            "release_year": 2025,
+            "date_kind": "original_release",
+            "episode_count": 2,
+            "episodes_complete": true,
+            "episode_scope": "catalog_release",
+            "external_ids": [],
+            "source": {
+              "name": "animeworld_detail",
+              "record_id": "38530864f58c0689",
+              "reliable": true,
+              "fetched_at": null,
+              "attributes": []
+            },
+            "field_provenance": [
+              {
+                "field": "audio",
+                "value": "SUB",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "38530864f58c0689",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "audio_language",
+                "value": "ja",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "38530864f58c0689",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "canonical_title",
+                "value": "Chainsaw Man: The Compilation",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "38530864f58c0689",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "date_kind",
+                "value": "original_release",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "38530864f58c0689",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episode_count",
+                "value": 2,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "38530864f58c0689",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episode_scope",
+                "value": "catalog_release",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "38530864f58c0689",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episodes_complete",
+                "value": true,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "38530864f58c0689",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "external_ids",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "38530864f58c0689",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "mapped_seasons",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "38530864f58c0689",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "premiere_date",
+                "value": "2025-09-05",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "38530864f58c0689",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "release_year",
+                "value": 2025,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "38530864f58c0689",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "season_coverage",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "38530864f58c0689",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "season_namespace",
+                "value": "catalog",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "38530864f58c0689",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "target_seasons",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "38530864f58c0689",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              }
+            ],
+            "crosswalks": [],
+            "cour": null,
+            "part": null,
+            "id": "38530864f58c0689",
+            "canonical_title": "Chainsaw Man: The Compilation",
+            "url": "https://www.animeworld.ac/play/chainsaw-man-the-compilation.BCukG",
+            "audio": "SUB",
+            "audio_language": "ja",
+            "subtitle_language": null,
+            "release_id": null,
+            "mapped_seasons": [],
+            "season_coverage": []
+          },
+          {
+            "alternate_titles": [
+              {
+                "text": "Iron Man",
+                "language": null,
+                "kind": "provider_name",
+                "season_number": null,
+                "scene_season_number": null,
+                "scene_namespace": "sonarr",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "fccb71dc8b385afc",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                }
+              },
+              {
+                "text": "Iron Man",
+                "language": null,
+                "kind": "provider_alternateName",
+                "season_number": null,
+                "scene_season_number": null,
+                "scene_namespace": "sonarr",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "fccb71dc8b385afc",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                }
+              }
+            ],
+            "season_number": null,
+            "scene_season_number": null,
+            "season_namespace": "catalog",
+            "target_seasons": [],
+            "premiere_date": "2010-10-01",
+            "air_date": null,
+            "release_year": 2010,
+            "date_kind": "original_release",
+            "episode_count": 12,
+            "episodes_complete": true,
+            "episode_scope": "catalog_release",
+            "external_ids": [],
+            "source": {
+              "name": "animeworld_detail",
+              "record_id": "fccb71dc8b385afc",
+              "reliable": true,
+              "fetched_at": null,
+              "attributes": []
+            },
+            "field_provenance": [
+              {
+                "field": "audio",
+                "value": "SUB",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "fccb71dc8b385afc",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "audio_language",
+                "value": "ja",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "fccb71dc8b385afc",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "canonical_title",
+                "value": "Iron Man",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "fccb71dc8b385afc",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "date_kind",
+                "value": "original_release",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "fccb71dc8b385afc",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episode_count",
+                "value": 12,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "fccb71dc8b385afc",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episode_scope",
+                "value": "catalog_release",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "fccb71dc8b385afc",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episodes_complete",
+                "value": true,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "fccb71dc8b385afc",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "external_ids",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "fccb71dc8b385afc",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "mapped_seasons",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "fccb71dc8b385afc",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "premiere_date",
+                "value": "2010-10-01",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "fccb71dc8b385afc",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "release_year",
+                "value": 2010,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "fccb71dc8b385afc",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "season_coverage",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "fccb71dc8b385afc",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "season_namespace",
+                "value": "catalog",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "fccb71dc8b385afc",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "target_seasons",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "fccb71dc8b385afc",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              }
+            ],
+            "crosswalks": [],
+            "cour": null,
+            "part": null,
+            "id": "fccb71dc8b385afc",
+            "canonical_title": "Iron Man",
+            "url": "https://www.animeworld.ac/play/iron-man.iSMhO",
+            "audio": "SUB",
+            "audio_language": "ja",
+            "subtitle_language": null,
+            "release_id": null,
+            "mapped_seasons": [],
+            "season_coverage": []
+          },
+          {
+            "alternate_titles": [
+              {
+                "text": "Calendar Men (ITA)",
+                "language": null,
+                "kind": "provider_name",
+                "season_number": null,
+                "scene_season_number": null,
+                "scene_namespace": "sonarr",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "8b5d462995c32fdf",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                }
+              },
+              {
+                "text": "Time Bokan Series: Yattodetaman (ITA)",
+                "language": null,
+                "kind": "provider_alternateName",
+                "season_number": null,
+                "scene_season_number": null,
+                "scene_namespace": "sonarr",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "8b5d462995c32fdf",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                }
+              }
+            ],
+            "season_number": null,
+            "scene_season_number": null,
+            "season_namespace": "catalog",
+            "target_seasons": [],
+            "premiere_date": "1981-02-07",
+            "air_date": null,
+            "release_year": 1981,
+            "date_kind": "original_release",
+            "episode_count": 52,
+            "episodes_complete": true,
+            "episode_scope": "catalog_release",
+            "external_ids": [],
+            "source": {
+              "name": "animeworld_detail",
+              "record_id": "8b5d462995c32fdf",
+              "reliable": true,
+              "fetched_at": null,
+              "attributes": []
+            },
+            "field_provenance": [
+              {
+                "field": "audio",
+                "value": "DUB",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "8b5d462995c32fdf",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "audio_language",
+                "value": "it",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "8b5d462995c32fdf",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "canonical_title",
+                "value": "Calendar Men (ITA)",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "8b5d462995c32fdf",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "date_kind",
+                "value": "original_release",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "8b5d462995c32fdf",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episode_count",
+                "value": 52,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "8b5d462995c32fdf",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episode_scope",
+                "value": "catalog_release",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "8b5d462995c32fdf",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episodes_complete",
+                "value": true,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "8b5d462995c32fdf",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "external_ids",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "8b5d462995c32fdf",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "mapped_seasons",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "8b5d462995c32fdf",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "premiere_date",
+                "value": "1981-02-07",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "8b5d462995c32fdf",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "release_year",
+                "value": 1981,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "8b5d462995c32fdf",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "season_coverage",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "8b5d462995c32fdf",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "season_namespace",
+                "value": "catalog",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "8b5d462995c32fdf",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "target_seasons",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "8b5d462995c32fdf",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              }
+            ],
+            "crosswalks": [],
+            "cour": null,
+            "part": null,
+            "id": "8b5d462995c32fdf",
+            "canonical_title": "Calendar Men (ITA)",
+            "url": "https://www.animeworld.ac/play/calendar-men-ita.8PZUP",
+            "audio": "DUB",
+            "audio_language": "it",
+            "subtitle_language": null,
+            "release_id": null,
+            "mapped_seasons": [],
+            "season_coverage": []
+          },
+          {
+            "alternate_titles": [],
+            "season_number": null,
+            "scene_season_number": null,
+            "season_namespace": "catalog",
+            "target_seasons": [],
+            "premiere_date": "2016-07-08",
+            "air_date": null,
+            "release_year": 2016,
+            "date_kind": "original_release",
+            "episode_count": 12,
+            "episodes_complete": true,
+            "episode_scope": "catalog_release",
+            "external_ids": [],
+            "source": {
+              "name": "animeworld_detail",
+              "record_id": "3db8d8d2bdede6c0",
+              "reliable": true,
+              "fetched_at": null,
+              "attributes": []
+            },
+            "field_provenance": [
+              {
+                "field": "audio",
+                "value": "SUB",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "3db8d8d2bdede6c0",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "audio_language",
+                "value": "ja",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "3db8d8d2bdede6c0",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "canonical_title",
+                "value": "Handa-kun",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "3db8d8d2bdede6c0",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "date_kind",
+                "value": "original_release",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "3db8d8d2bdede6c0",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episode_count",
+                "value": 12,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "3db8d8d2bdede6c0",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episode_scope",
+                "value": "catalog_release",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "3db8d8d2bdede6c0",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episodes_complete",
+                "value": true,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "3db8d8d2bdede6c0",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "external_ids",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "3db8d8d2bdede6c0",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "mapped_seasons",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "3db8d8d2bdede6c0",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "premiere_date",
+                "value": "2016-07-08",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "3db8d8d2bdede6c0",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "release_year",
+                "value": 2016,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "3db8d8d2bdede6c0",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "season_coverage",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "3db8d8d2bdede6c0",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "season_namespace",
+                "value": "catalog",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "3db8d8d2bdede6c0",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "target_seasons",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "3db8d8d2bdede6c0",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              }
+            ],
+            "crosswalks": [],
+            "cour": null,
+            "part": null,
+            "id": "3db8d8d2bdede6c0",
+            "canonical_title": "Handa-kun",
+            "url": "https://www.animeworld.ac/play/handa-kun.81pvK",
+            "audio": "SUB",
+            "audio_language": "ja",
+            "subtitle_language": null,
+            "release_id": null,
+            "mapped_seasons": [],
+            "season_coverage": []
+          },
+          {
+            "alternate_titles": [
+              {
+                "text": "Mechanical Marie",
+                "language": null,
+                "kind": "provider_name",
+                "season_number": null,
+                "scene_season_number": null,
+                "scene_namespace": "sonarr",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c44ec689abf27633",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                }
+              },
+              {
+                "text": "Kikaijikake no Marie",
+                "language": null,
+                "kind": "provider_alternateName",
+                "season_number": null,
+                "scene_season_number": null,
+                "scene_namespace": "sonarr",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c44ec689abf27633",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                }
+              }
+            ],
+            "season_number": null,
+            "scene_season_number": null,
+            "season_namespace": "catalog",
+            "target_seasons": [],
+            "premiere_date": "2025-10-05",
+            "air_date": null,
+            "release_year": 2025,
+            "date_kind": "original_release",
+            "episode_count": 12,
+            "episodes_complete": true,
+            "episode_scope": "catalog_release",
+            "external_ids": [],
+            "source": {
+              "name": "animeworld_detail",
+              "record_id": "c44ec689abf27633",
+              "reliable": true,
+              "fetched_at": null,
+              "attributes": []
+            },
+            "field_provenance": [
+              {
+                "field": "audio",
+                "value": "SUB",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c44ec689abf27633",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "audio_language",
+                "value": "ja",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c44ec689abf27633",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "canonical_title",
+                "value": "Mechanical Marie",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c44ec689abf27633",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "date_kind",
+                "value": "original_release",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c44ec689abf27633",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episode_count",
+                "value": 12,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c44ec689abf27633",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episode_scope",
+                "value": "catalog_release",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c44ec689abf27633",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episodes_complete",
+                "value": true,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c44ec689abf27633",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "external_ids",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c44ec689abf27633",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "mapped_seasons",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c44ec689abf27633",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "premiere_date",
+                "value": "2025-10-05",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c44ec689abf27633",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "release_year",
+                "value": 2025,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c44ec689abf27633",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "season_coverage",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c44ec689abf27633",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "season_namespace",
+                "value": "catalog",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c44ec689abf27633",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "target_seasons",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "c44ec689abf27633",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              }
+            ],
+            "crosswalks": [],
+            "cour": null,
+            "part": null,
+            "id": "c44ec689abf27633",
+            "canonical_title": "Mechanical Marie",
+            "url": "https://www.animeworld.ac/play/mechanical-marie.SAZmN",
+            "audio": "SUB",
+            "audio_language": "ja",
+            "subtitle_language": null,
+            "release_id": null,
+            "mapped_seasons": [],
+            "season_coverage": []
+          },
+          {
+            "alternate_titles": [
+              {
+                "text": "Chainsaw Man - The Movie: Reze Arc (ITA)",
+                "language": null,
+                "kind": "provider_name",
+                "season_number": null,
+                "scene_season_number": null,
+                "scene_namespace": "sonarr",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "d7f573f6d7887cda",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                }
+              },
+              {
+                "text": "Chainsaw Man Movie: Reze-hen (ITA)",
+                "language": null,
+                "kind": "provider_alternateName",
+                "season_number": null,
+                "scene_season_number": null,
+                "scene_namespace": "sonarr",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "d7f573f6d7887cda",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                }
+              }
+            ],
+            "season_number": null,
+            "scene_season_number": null,
+            "season_namespace": "catalog",
+            "target_seasons": [],
+            "premiere_date": "2025-09-19",
+            "air_date": null,
+            "release_year": 2025,
+            "date_kind": "original_release",
+            "episode_count": 1,
+            "episodes_complete": true,
+            "episode_scope": "catalog_release",
+            "external_ids": [],
+            "source": {
+              "name": "animeworld_detail",
+              "record_id": "d7f573f6d7887cda",
+              "reliable": true,
+              "fetched_at": null,
+              "attributes": []
+            },
+            "field_provenance": [
+              {
+                "field": "audio",
+                "value": "DUB",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "d7f573f6d7887cda",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "audio_language",
+                "value": "it",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "d7f573f6d7887cda",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "canonical_title",
+                "value": "Chainsaw Man - The Movie: Reze Arc (ITA)",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "d7f573f6d7887cda",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "date_kind",
+                "value": "original_release",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "d7f573f6d7887cda",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episode_count",
+                "value": 1,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "d7f573f6d7887cda",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episode_scope",
+                "value": "catalog_release",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "d7f573f6d7887cda",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episodes_complete",
+                "value": true,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "d7f573f6d7887cda",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "external_ids",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "d7f573f6d7887cda",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "mapped_seasons",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "d7f573f6d7887cda",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "premiere_date",
+                "value": "2025-09-19",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "d7f573f6d7887cda",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "release_year",
+                "value": 2025,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "d7f573f6d7887cda",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "season_coverage",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "d7f573f6d7887cda",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "season_namespace",
+                "value": "catalog",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "d7f573f6d7887cda",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "target_seasons",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "d7f573f6d7887cda",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              }
+            ],
+            "crosswalks": [],
+            "cour": null,
+            "part": null,
+            "id": "d7f573f6d7887cda",
+            "canonical_title": "Chainsaw Man - The Movie: Reze Arc (ITA)",
+            "url": "https://www.animeworld.ac/play/chainsaw-man-the-movie-reze-arc-ita.bF45A",
+            "audio": "DUB",
+            "audio_language": "it",
+            "subtitle_language": null,
+            "release_id": null,
+            "mapped_seasons": [],
+            "season_coverage": []
+          },
+          {
+            "alternate_titles": [
+              {
+                "text": "Chainsaw Man - The Movie: Reze Arc",
+                "language": null,
+                "kind": "provider_name",
+                "season_number": null,
+                "scene_season_number": null,
+                "scene_namespace": "sonarr",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "32372d346997edc6",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                }
+              },
+              {
+                "text": "Chainsaw Man Movie: Reze-hen",
+                "language": null,
+                "kind": "provider_alternateName",
+                "season_number": null,
+                "scene_season_number": null,
+                "scene_namespace": "sonarr",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "32372d346997edc6",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                }
+              }
+            ],
+            "season_number": null,
+            "scene_season_number": null,
+            "season_namespace": "catalog",
+            "target_seasons": [],
+            "premiere_date": "2025-09-19",
+            "air_date": null,
+            "release_year": 2025,
+            "date_kind": "original_release",
+            "episode_count": 1,
+            "episodes_complete": true,
+            "episode_scope": "catalog_release",
+            "external_ids": [],
+            "source": {
+              "name": "animeworld_detail",
+              "record_id": "32372d346997edc6",
+              "reliable": true,
+              "fetched_at": null,
+              "attributes": []
+            },
+            "field_provenance": [
+              {
+                "field": "audio",
+                "value": "SUB",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "32372d346997edc6",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "audio_language",
+                "value": "ja",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "32372d346997edc6",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "canonical_title",
+                "value": "Chainsaw Man - The Movie: Reze Arc",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "32372d346997edc6",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "date_kind",
+                "value": "original_release",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "32372d346997edc6",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episode_count",
+                "value": 1,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "32372d346997edc6",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episode_scope",
+                "value": "catalog_release",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "32372d346997edc6",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episodes_complete",
+                "value": true,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "32372d346997edc6",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "external_ids",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "32372d346997edc6",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "mapped_seasons",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "32372d346997edc6",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "premiere_date",
+                "value": "2025-09-19",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "32372d346997edc6",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "release_year",
+                "value": 2025,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "32372d346997edc6",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "season_coverage",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "32372d346997edc6",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "season_namespace",
+                "value": "catalog",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "32372d346997edc6",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "target_seasons",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "32372d346997edc6",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              }
+            ],
+            "crosswalks": [],
+            "cour": null,
+            "part": null,
+            "id": "32372d346997edc6",
+            "canonical_title": "Chainsaw Man - The Movie: Reze Arc",
+            "url": "https://www.animeworld.ac/play/chainsaw-man-the-movie-reze-arc.m5Gv0",
+            "audio": "SUB",
+            "audio_language": "ja",
+            "subtitle_language": null,
+            "release_id": null,
+            "mapped_seasons": [],
+            "season_coverage": []
+          },
+          {
+            "alternate_titles": [
+              {
+                "text": "Chainsaw Man",
+                "language": null,
+                "kind": "provider_name",
+                "season_number": null,
+                "scene_season_number": null,
+                "scene_namespace": "sonarr",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "ecb5dbdce2f9d9dd",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                }
+              },
+              {
+                "text": "Chainsaw Man",
+                "language": null,
+                "kind": "provider_alternateName",
+                "season_number": null,
+                "scene_season_number": null,
+                "scene_namespace": "sonarr",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "ecb5dbdce2f9d9dd",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                }
+              }
+            ],
+            "season_number": null,
+            "scene_season_number": null,
+            "season_namespace": "catalog",
+            "target_seasons": [],
+            "premiere_date": "2022-10-11",
+            "air_date": null,
+            "release_year": 2022,
+            "date_kind": "original_release",
+            "episode_count": 12,
+            "episodes_complete": true,
+            "episode_scope": "catalog_release",
+            "external_ids": [],
+            "source": {
+              "name": "animeworld_detail",
+              "record_id": "ecb5dbdce2f9d9dd",
+              "reliable": true,
+              "fetched_at": null,
+              "attributes": []
+            },
+            "field_provenance": [
+              {
+                "field": "audio",
+                "value": "SUB",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "ecb5dbdce2f9d9dd",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "audio_language",
+                "value": "ja",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "ecb5dbdce2f9d9dd",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "canonical_title",
+                "value": "Chainsaw Man",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "ecb5dbdce2f9d9dd",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "date_kind",
+                "value": "original_release",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "ecb5dbdce2f9d9dd",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episode_count",
+                "value": 12,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "ecb5dbdce2f9d9dd",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episode_scope",
+                "value": "catalog_release",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "ecb5dbdce2f9d9dd",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "episodes_complete",
+                "value": true,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "ecb5dbdce2f9d9dd",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "external_ids",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "ecb5dbdce2f9d9dd",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "mapped_seasons",
+                "value": [
+                  1
+                ],
+                "source": {
+                  "name": "v3_mapping_observation",
+                  "record_id": "ecb5dbdce2f9d9dd",
+                  "reliable": false,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": false
+              },
+              {
+                "field": "premiere_date",
+                "value": "2022-10-11",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "ecb5dbdce2f9d9dd",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "release_year",
+                "value": 2022,
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "ecb5dbdce2f9d9dd",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "season_coverage",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "ecb5dbdce2f9d9dd",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "season_namespace",
+                "value": "catalog",
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "ecb5dbdce2f9d9dd",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              },
+              {
+                "field": "target_seasons",
+                "value": [],
+                "source": {
+                  "name": "animeworld_detail",
+                  "record_id": "ecb5dbdce2f9d9dd",
+                  "reliable": true,
+                  "fetched_at": null,
+                  "attributes": []
+                },
+                "confidence": null,
+                "derived": false,
+                "implicit": true
+              }
+            ],
+            "crosswalks": [],
+            "cour": null,
+            "part": null,
+            "id": "ecb5dbdce2f9d9dd",
+            "canonical_title": "Chainsaw Man",
+            "url": "https://www.animeworld.ac/play/chainsaw-man.3EoJJ",
+            "audio": "SUB",
+            "audio_language": "ja",
+            "subtitle_language": null,
+            "release_id": null,
+            "mapped_seasons": [
+              1
+            ],
+            "season_coverage": []
+          }
+        ]
+      },
+      "expected_v3_decision": {
+        "kind": "persisted_mapping_observation",
+        "urls": [
+          "https://www.animeworld.ac/play/chainsaw-man.3EoJJ"
+        ],
+        "ground_truth": false,
+        "raw_mapping_rows": [
+          {
+            "title": "Chainsaw Man",
+            "absolute": false,
+            "seasons": {
+              "1": [
+                "https://www.animeworld.ac/play/chainsaw-man.3EoJJ"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

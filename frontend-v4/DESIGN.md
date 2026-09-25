@@ -1,0 +1,9 @@
+# AniDown V4 frontend implementation design
+
+Owner: V4 frontend maintainers. Scope: frontend-v4. Product authority: docs/v4/ui-spec.md; API authority: docs/v4/frontend-api-contract.md. Prior direction: docs/v4/frontend-design.md. This file documents adopted implementation; CSS variables in styles.css are the executable token producer, presentation.js/app.js their non-LLM consumers. Version1. Revalidate frontend tests and browser screenshots for token/layout drift; retire this authority only when this frontend is replaced, not by copying it to another design system.
+
+Primitive/semantic tokens share a compact CSS-variable layer: canvas/nav/surface/raised; text/muted/accent/on-accent; border vs control-border; warning/success/danger;4/8/12/16/24/32/40/48 spacing;4/8 radius; Segoe application typography14/13/20/30. No external fonts, token library or framework. Control boundaries meet3:1; normal/status text meets4.5:1 on adopted surfaces (negative regression test). Status combines text and a dot, never color alone.
+
+216px navigation; same main gutter40px/max1200 including padding. Below1000px library rows become compact grids and review queue a local horizontal strip. Below700px navigation wraps and content gutters16px. Filtered single review omits duplicate queue. Release track preserves destination episode ranges, immutable raw coordinates are Advanced. Native dialog for accountable human decisions, one primary button tier.
+
+Quality gates: tests/presentation.test.mjs, tests/v4/test_frontend_runtime.py and recorded browser review. No animation or ornamental gradients; reduced-motion explicit. Adopted components: shell navigation, buttons, filter forms, expandable library row, mapping plan track, review detail/queue, native decision dialog, timeline, closed Advanced details. No optional logo/image system or third-party component projection adopted.

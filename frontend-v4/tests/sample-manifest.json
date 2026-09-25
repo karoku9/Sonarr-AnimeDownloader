@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "source": "tests/v4/fixtures/production_metadata_v1.json",
+  "sha256": "2c1782a85067cefcc865f8afa95d6bd68ba50062f1e74343216fc08e447d2398",
+  "targets": {
+    "black": "70:1",
+    "crystal": "189:1",
+    "nadia": "182:1",
+    "ranma": "143:1"
+  },
+  "derived": "application DTO only",
+  "sanitization": "Normalize generated opaque item ID and clock timestamps only; native semantic metadata unchanged; no raw URLs or credentials."
+}

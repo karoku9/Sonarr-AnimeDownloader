@@ -13,6 +13,24 @@ Il _Docker Container_ di **Sonarr** può essere trovato [qui](https://github.com
 
 Il progetto utilizza la libreria `animeworld`, il codice sorgente e la documentazione è reperibile [qui](../../../AnimeWorld-API).
 
+## AniDown v3
+
+AniDown v3 e la continuazione di AniDown v2. La cartella dati esistente puo essere riutilizzata senza conversione: il formato di `table.json` resta invariato e i file gia presenti in `/src/database` continuano a essere caricati.
+
+Prima di passare al nuovo container e consigliato creare una copia di backup di `table.json`.
+
+La build Docker locale di AniDown v3 usa:
+
+```yaml
+services:
+  anidown_v3:
+    build: .
+    image: anidown-v3:latest
+    container_name: anidown-v3
+    ports:
+      - "5000:5000"
+```
+
 ## Hacktoberfest
 
 Per partecipare all'evento Hacktoberfest leggere la [documentazione](https://mainkronos.github.io/Sonarr-AnimeDownloader/community/hacktoberfest/).\
@@ -21,25 +39,28 @@ Per partecipare all'evento Hacktoberfest leggere la [documentazione](https://mai
 ## Installazione
 
 ```yaml
-version: '3.9'
 services:
-  mainkronos:
-    container_name: AnimeDownloader
-    volumes:
-      - '/path/to/data:/src/database'
-      - '/path/to/animeSeries:/tv'
-      - '/path/to/downloads:/downloads'
-      - '/path/to/connections:/src/script'
+  anidown_v3:
+    build: .
+    image: anidown-v3:latest
+    container_name: anidown-v3
     ports:
-      - 'port:5000'
+      - "5000:5000"
     environment:
-      - 'SONARR_URL=http://url:port'
-      - 'API_KEY=1234567890abcdefghijklmn'
-      - 'ANIMEWORLD_URL=https://www.animeworld.ac'
-      - 'TZ=Europe/Rome'
-      - 'PUID=1000'
-      - 'PGID=1000'
-    image: 'ghcr.io/mainkronos/anime_downloader:latest'
+      - SONARR_URL=${SONARR_URL}
+      - API_KEY=${API_KEY}
+      - ANIMEWORLD_URL=${ANIMEWORLD_URL}
+      - TZ=Europe/Rome
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - "C:/anidown/data:/src/database"
+      - "C:/anidown/downloads:/downloads"
+      - "C:/anidown/connections:/src/script"
+      - "B:/00_Plex:/00_Plex"
+      - "B:/00_Plex/Anime:/tv"
+      - "B:/00_Plex/Serie TV:/SerieTV"
+    restart: unless-stopped
 ```
 
 ## [Documentazione](https://mainkronos.github.io/Sonarr-AnimeDownloader)

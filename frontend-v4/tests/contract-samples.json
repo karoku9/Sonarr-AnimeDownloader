@@ -1,0 +1,446 @@
+{
+  "black": {
+    "id": "contract-black",
+    "title": "Black Lagoon",
+    "mapping_state": "proposed",
+    "review_state": "not_required",
+    "revision": 0,
+    "created_at": "2026-09-14T00:00:00Z",
+    "updated_at": "2026-09-14T00:00:00Z",
+    "targets": [
+      {
+        "target_id": "70:1",
+        "season": 1,
+        "episode_count": 24
+      }
+    ],
+    "reasons": [
+      {
+        "code": "scene_identity_supported",
+        "message": "Season identity confirmed by Sonarr scene numbering and release metadata."
+      },
+      {
+        "code": "composite_coverage",
+        "message": "2 releases together cover all 24 episodes."
+      }
+    ],
+    "actions": {
+      "approve": true,
+      "choose": true,
+      "reject": true,
+      "dismiss": true,
+      "reopen": false
+    },
+    "approved_by_human": false,
+    "plan": {
+      "id": "ec75dec6c9eddf1701d86261",
+      "coverage_status": "complete",
+      "targets": [
+        {
+          "target_id": "70:1",
+          "season": 1,
+          "episode_count": 24
+        }
+      ],
+      "segments": [
+        {
+          "release_id": "7e488c14f7dbb9f3cc57",
+          "title": "Black Lagoon (ITA)",
+          "source_episode_range": [
+            1,
+            12
+          ],
+          "source_episode_count": 12,
+          "coverage_status": "partial",
+          "reliability": "metadata_supported",
+          "destinations": [
+            {
+              "target_id": "70:1",
+              "season": 1,
+              "episode_range": [
+                1,
+                12
+              ],
+              "episode_count": 12
+            }
+          ],
+          "variants": [
+            {
+              "candidate_id": "5bea44625af6224c",
+              "title": "Black Lagoon (ITA)",
+              "audio": "DUB",
+              "audio_language": "it",
+              "subtitle_language": null,
+              "selected": false
+            }
+          ]
+        },
+        {
+          "release_id": "9182fb9f23fd9a5d8f66",
+          "title": "Black Lagoon: The Second Barrage (ITA)",
+          "source_episode_range": [
+            1,
+            12
+          ],
+          "source_episode_count": 12,
+          "coverage_status": "partial",
+          "reliability": "metadata_supported",
+          "destinations": [
+            {
+              "target_id": "70:1",
+              "season": 1,
+              "episode_range": [
+                13,
+                24
+              ],
+              "episode_count": 12
+            }
+          ],
+          "variants": [
+            {
+              "candidate_id": "d0d6a2336ccc1cf1",
+              "title": "Black Lagoon: The Second Barrage (ITA)",
+              "audio": "DUB",
+              "audio_language": "it",
+              "subtitle_language": null,
+              "selected": false
+            }
+          ]
+        }
+      ],
+      "episode_count": 24,
+      "requires_uncertainty_acknowledgement": false
+    },
+    "evidence_summary": [
+      {
+        "candidate_id": "5bea44625af6224c",
+        "title": "Black Lagoon (ITA)",
+        "messages": [
+          "Season identity supported by Sonarr scene numbering and release metadata.",
+          "Observed source episodes agree with the mapped scene segment."
+        ]
+      },
+      {
+        "candidate_id": "d0d6a2336ccc1cf1",
+        "title": "Black Lagoon: The Second Barrage (ITA)",
+        "messages": [
+          "Season identity supported by Sonarr scene numbering and release metadata.",
+          "Observed source episodes agree with the mapped scene segment."
+        ]
+      }
+    ],
+    "alternate_plans": [],
+    "human_decision": null
+  },
+  "crystal": {
+    "id": "contract-crystal",
+    "title": "Sailor Moon Crystal",
+    "mapping_state": "needs_review",
+    "review_state": "open",
+    "revision": 0,
+    "created_at": "2026-09-14T00:00:00Z",
+    "updated_at": "2026-09-14T00:00:00Z",
+    "targets": [
+      {
+        "target_id": "189:1",
+        "season": 1,
+        "episode_count": 14
+      },
+      {
+        "target_id": "189:2",
+        "season": 2,
+        "episode_count": 12
+      }
+    ],
+    "reasons": [
+      {
+        "code": "crosswalk_missing",
+        "message": "Season/release correspondence cannot yet be verified."
+      },
+      {
+        "code": "episode_boundary_unverified",
+        "message": "Episode boundary between the season targets cannot be verified."
+      },
+      {
+        "code": "insufficient_metadata",
+        "message": "Available metadata does not establish a complete mapping plan."
+      },
+      {
+        "code": "episode_boundary_unverified",
+        "message": "Episode boundary between the season targets cannot be verified."
+      }
+    ],
+    "actions": {
+      "approve": true,
+      "choose": true,
+      "reject": true,
+      "dismiss": true,
+      "reopen": false
+    },
+    "approved_by_human": false,
+    "plan": {
+      "id": "5698008dc1e6d2343bfa1d8b",
+      "coverage_status": "complete",
+      "targets": [
+        {
+          "target_id": "189:1",
+          "season": 1,
+          "episode_count": 14
+        },
+        {
+          "target_id": "189:2",
+          "season": 2,
+          "episode_count": 12
+        }
+      ],
+      "segments": [
+        {
+          "release_id": "4d0083a71f4d57e4e96f",
+          "title": "Sailor Moon Crystal (ITA)",
+          "source_episode_range": [
+            1,
+            26
+          ],
+          "source_episode_count": 26,
+          "coverage_status": "complete",
+          "reliability": "inferred",
+          "destinations": [
+            {
+              "target_id": "189:1",
+              "season": 1,
+              "episode_range": [
+                1,
+                14
+              ],
+              "episode_count": 14
+            },
+            {
+              "target_id": "189:2",
+              "season": 2,
+              "episode_range": [
+                1,
+                12
+              ],
+              "episode_count": 12
+            }
+          ],
+          "variants": [
+            {
+              "candidate_id": "b6150d2fd5c7c17b",
+              "title": "Sailor Moon Crystal (ITA)",
+              "audio": "DUB",
+              "audio_language": "it",
+              "subtitle_language": null,
+              "selected": false
+            }
+          ]
+        }
+      ],
+      "episode_count": 26,
+      "requires_uncertainty_acknowledgement": true
+    },
+    "evidence_summary": [
+      {
+        "candidate_id": "b6150d2fd5c7c17b",
+        "title": "Sailor Moon Crystal (ITA)",
+        "messages": [
+          "Observed numbering supports the proposed combined coverage.",
+          "The internal season boundary cannot independently be verified."
+        ]
+      }
+    ],
+    "alternate_plans": [],
+    "human_decision": null
+  },
+  "nadia": {
+    "id": "contract-nadia",
+    "title": "Nadia: The Secret of Blue Water",
+    "mapping_state": "proposed",
+    "review_state": "not_required",
+    "revision": 0,
+    "created_at": "2026-09-14T00:00:00Z",
+    "updated_at": "2026-09-14T00:00:00Z",
+    "targets": [
+      {
+        "target_id": "182:1",
+        "season": 1,
+        "episode_count": 39
+      }
+    ],
+    "reasons": [
+      {
+        "code": "metadata_supported",
+        "message": "Title, release date and observed episode numbering support this proposal."
+      }
+    ],
+    "actions": {
+      "approve": true,
+      "choose": true,
+      "reject": true,
+      "dismiss": true,
+      "reopen": false
+    },
+    "approved_by_human": false,
+    "plan": {
+      "id": "036fee54f3b1441a9e2e2c56",
+      "coverage_status": "complete",
+      "targets": [
+        {
+          "target_id": "182:1",
+          "season": 1,
+          "episode_count": 39
+        }
+      ],
+      "segments": [
+        {
+          "release_id": "38b10b8f714dd44f21cf",
+          "title": "Nadia - Il mistero della pietra azzurra (ITA)",
+          "source_episode_range": [
+            1,
+            39
+          ],
+          "source_episode_count": 39,
+          "coverage_status": "complete",
+          "reliability": "metadata_supported",
+          "destinations": [
+            {
+              "target_id": "182:1",
+              "season": 1,
+              "episode_range": [
+                1,
+                39
+              ],
+              "episode_count": 39
+            }
+          ],
+          "variants": [
+            {
+              "candidate_id": "e9d096a542284deb",
+              "title": "Nadia - Il mistero della pietra azzurra (ITA)",
+              "audio": "DUB",
+              "audio_language": "it",
+              "subtitle_language": null,
+              "selected": false
+            }
+          ]
+        }
+      ],
+      "episode_count": 39,
+      "requires_uncertainty_acknowledgement": false
+    },
+    "evidence_summary": [
+      {
+        "candidate_id": "e9d096a542284deb",
+        "title": "Nadia - Il mistero della pietra azzurra (ITA)",
+        "messages": [
+          "Title, premiere date and observed episode numbering support this target."
+        ]
+      }
+    ],
+    "alternate_plans": [],
+    "human_decision": null
+  },
+  "ranma": {
+    "id": "contract-ranma",
+    "title": "Ranma ½ (2024)",
+    "mapping_state": "proposed",
+    "review_state": "not_required",
+    "revision": 0,
+    "created_at": "2026-09-14T00:00:00Z",
+    "updated_at": "2026-09-14T00:00:00Z",
+    "targets": [
+      {
+        "target_id": "143:1",
+        "season": 1,
+        "episode_count": 12
+      }
+    ],
+    "reasons": [
+      {
+        "code": "metadata_supported",
+        "message": "Title, release date and observed episode numbering support this proposal."
+      }
+    ],
+    "actions": {
+      "approve": true,
+      "choose": true,
+      "reject": true,
+      "dismiss": true,
+      "reopen": false
+    },
+    "approved_by_human": false,
+    "plan": {
+      "id": "0521d072c8f4ee33c31b4d41",
+      "coverage_status": "complete",
+      "targets": [
+        {
+          "target_id": "143:1",
+          "season": 1,
+          "episode_count": 12
+        }
+      ],
+      "segments": [
+        {
+          "release_id": "1278c733431e25c2f3b1",
+          "title": "Ranma ½ (2024) (ITA)",
+          "source_episode_range": [
+            1,
+            12
+          ],
+          "source_episode_count": 12,
+          "coverage_status": "complete",
+          "reliability": "metadata_supported",
+          "destinations": [
+            {
+              "target_id": "143:1",
+              "season": 1,
+              "episode_range": [
+                1,
+                12
+              ],
+              "episode_count": 12
+            }
+          ],
+          "variants": [
+            {
+              "candidate_id": "0aea52986c147274",
+              "title": "Ranma ½ (2024) (ITA)",
+              "audio": "DUB",
+              "audio_language": "it",
+              "subtitle_language": null,
+              "selected": false
+            },
+            {
+              "candidate_id": "cac29e0cff05360c",
+              "title": "Ranma ½ (2024)",
+              "audio": "SUB",
+              "audio_language": "ja",
+              "subtitle_language": null,
+              "selected": false
+            }
+          ]
+        }
+      ],
+      "episode_count": 12,
+      "requires_uncertainty_acknowledgement": false
+    },
+    "evidence_summary": [
+      {
+        "candidate_id": "0aea52986c147274",
+        "title": "Ranma ½ (2024) (ITA)",
+        "messages": [
+          "Title, premiere date and observed episode numbering support this target."
+        ]
+      },
+      {
+        "candidate_id": "cac29e0cff05360c",
+        "title": "Ranma ½ (2024)",
+        "messages": [
+          "Title, premiere date and observed episode numbering support this target."
+        ]
+      }
+    ],
+    "alternate_plans": [],
+    "human_decision": null
+  }
+}

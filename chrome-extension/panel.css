@@ -1,0 +1,193 @@
+:root.anidown-panel-page {
+  --anidown-panel-width: 360px;
+}
+:root.anidown-panel-page body {
+  margin-left: var(--anidown-panel-width) !important;
+  width: calc(100% - var(--anidown-panel-width)) !important;
+  transition: margin-left 160ms ease, width 160ms ease;
+}
+:root.anidown-panel-page.anidown-panel-collapsed {
+  --anidown-panel-width: 48px;
+}
+#anidown-v3-panel {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 2147483600;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 360px;
+  overflow: hidden;
+  border-right: 1px solid #283441;
+  background: #10151c;
+  color: #ebf2fb;
+  font: 13px/1.42 Arial, sans-serif;
+  box-shadow: 5px 0 17px rgba(0,0,0,.3);
+}
+#anidown-v3-panel.collapsed { width: 48px; }
+#anidown-v3-panel header {
+  box-sizing: border-box;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  border-bottom: 1px solid #283441;
+}
+#anidown-v3-panel header strong { color: white; font-size: 17px; }
+#anidown-v3-panel.collapsed header strong, #anidown-v3-panel.collapsed main, #anidown-v3-panel.collapsed .savebar { display: none; }
+#anidown-v3-panel .collapse {
+  min-height: 32px;
+  width: 32px;
+  padding: 0;
+  border: 1px solid #2e3946;
+  border-radius: 5px;
+  background: #19212a;
+  color: #e7eef8;
+  cursor: pointer;
+}
+#anidown-v3-panel main {
+  box-sizing: border-box;
+  height: calc(100% - 54px);
+  overflow-y: auto;
+  padding: 13px 13px 82px;
+}
+#anidown-v3-panel h2 { margin: 0 0 7px; font-size: 17px; font-weight: 600; }
+#anidown-v3-panel h3 { margin: 16px 0 8px; font-size: 13px; color: #aeb9c8; text-transform: uppercase; }
+#anidown-v3-panel p { margin: 6px 0; }
+#anidown-v3-panel .url, #anidown-v3-panel .existing-url {
+  overflow-wrap: anywhere;
+  color: #8f9daf;
+  font-size: 11px;
+}
+#anidown-v3-panel .audio, #anidown-v3-panel .status {
+  display: inline-flex;
+  padding: 3px 7px;
+  border-radius: 4px;
+  font-size: 11px;
+  background: #222c36;
+  color: #bdcad8;
+}
+#anidown-v3-panel .audio.sub, #anidown-v3-panel .status.mapped { color: #64dfa0; background: rgba(44,175,102,.18); }
+#anidown-v3-panel .audio.dub { color: #ff9864; background: rgba(235,90,48,.2); }
+#anidown-v3-panel .status.needs_review, #anidown-v3-panel .status.language_mismatch, #anidown-v3-panel .status.duplicate_url { color: #f5c85d; background: rgba(245,200,93,.16); }
+#anidown-v3-panel .status.invalid { color: #ff8e86; background: rgba(255,112,106,.16); }
+#anidown-v3-panel .toggle { display: flex; align-items: center; gap: 7px; margin: 14px 0; color: #c2cedb; }
+#anidown-v3-panel input[type=checkbox] { accent-color: #428bd8; }
+#anidown-v3-panel .connection {
+  margin: 9px 0;
+  padding: 8px;
+  border-radius: 5px;
+  background: #151d25;
+  color: #aeb9c8;
+  font-size: 12px;
+}
+#anidown-v3-panel .connection.ok { color: #64dfa0; }
+#anidown-v3-panel .connection.warning, #anidown-v3-panel .warning { color: #f5c85d; }
+#anidown-v3-panel .connection.error { color: #ff8e86; }
+#anidown-v3-panel .candidate {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  margin: 6px 0;
+  padding: 9px;
+  border: 1px solid #25303c;
+  border-radius: 6px;
+  background: #151c24;
+  color: #edf3fa;
+  text-align: left;
+  cursor: pointer;
+}
+#anidown-v3-panel .candidate.selected { border-color: #448fdc; background: #182739; }
+#anidown-v3-panel .candidate strong { flex: 1 1 175px; }
+#anidown-v3-panel .candidate-meta { flex: 1 1 100%; color: #97a6b7; font-size: 11px; }
+#anidown-v3-panel .mapping {
+  display: grid;
+  gap: 7px;
+  margin: 12px 0;
+  padding: 11px;
+  border: 1px solid #293746;
+  border-radius: 7px;
+  background: #121b24;
+}
+#anidown-v3-panel .mapping h3 { margin-top: 0; }
+#anidown-v3-panel .mapping label { margin-top: 5px; color: #9eaabd; font-size: 11px; }
+#anidown-v3-panel .selected-title { font-size: 16px; }
+#anidown-v3-panel .page-summary { color: #d1dbe7; font-size: 12px; }
+#anidown-v3-panel .season-options { display: grid; gap: 6px; margin: 7px 0; }
+#anidown-v3-panel .season-option {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #26333f;
+  border-radius: 5px;
+  color: #edf3fa;
+  background: #151e27;
+  text-align: left;
+  cursor: pointer;
+}
+#anidown-v3-panel .season-option.selected { border-color: #448fdc; background: #18293b; }
+#anidown-v3-panel .season-option .existing-url { flex-basis: 100%; white-space: pre-wrap; }
+#anidown-v3-panel .season-option small { color: #70aff2; }
+#anidown-v3-panel .add-season { display: grid; grid-template-columns: 1fr auto; gap: 6px; }
+#anidown-v3-panel .add-season button {
+  padding: 0 10px;
+  border: 1px solid #344352;
+  border-radius: 5px;
+  background: #1a2530;
+  color: #e5edf7;
+}
+#anidown-v3-panel .control { display: grid; gap: 4px; }
+#anidown-v3-panel select, #anidown-v3-panel input.new-season, #anidown-v3-panel .save {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 38px;
+  padding: 0 9px;
+  border: 1px solid #303c49;
+  border-radius: 5px;
+  background: #0c1117;
+  color: #edf3fa;
+}
+#anidown-v3-panel .savebar {
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 11px 13px;
+  border-top: 1px solid #293746;
+  background: #111820;
+}
+#anidown-v3-panel .savebar.visible { display: block; }
+#anidown-v3-panel .save {
+  border-color: #2977c7;
+  background: #2977c7;
+  cursor: pointer;
+  font-weight: 600;
+}
+#anidown-v3-panel .save:disabled { opacity: .55; cursor: not-allowed; }
+#anidown-v3-panel .debug { margin-top: 14px; border-top: 1px solid #27323e; padding-top: 10px; color: #9caabd; }
+#anidown-v3-panel .debug summary { cursor: pointer; }
+#anidown-v3-panel .debug-content {
+  margin: 8px 0;
+  padding: 7px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  border-radius: 5px;
+  background: #0b1117;
+  font: 11px/1.45 Consolas, monospace;
+}
+#anidown-v3-panel .copy-debug {
+  min-height: 32px;
+  border: 1px solid #344352;
+  border-radius: 5px;
+  background: #19232d;
+  color: #e5edf7;
+}
+#anidown-v3-panel .muted { color: #9caabd; }

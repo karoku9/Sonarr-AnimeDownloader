@@ -1,94 +1,50 @@
+"""Opt-in legacy integration smoke against a disposable loopback Sonarr only.
+
+Normal test discovery performs no network I/O and imports no legacy runtime.
+"""
+import os
+from pathlib import Path
+from urllib.parse import urlsplit
 import unittest
 
-from src.components.backend.core import Core
-from src.components.backend.connection import ExternalDB
-from src.components.backend.core import Constant as ctx
-from src.components.backend.connection.Sonarr import Sonarr
-from src.components.api import API
-from src.components.frontend_OLD import Frontend
 
-import pathlib
-import sys, json
-import uvicorn
-
-ctx.DOWNLOAD_FOLDER = pathlib.Path('./tests/downloads').absolute()
-ctx.DATABASE_FOLDER = pathlib.Path("./tests/database").absolute()
-ctx.SCRIPT_FOLDER = pathlib.Path("./tests/script").absolute()
-ctx.SONARR_URL = "http://netvault:8989/"
-ctx.API_KEY = "f10994e9f3494368a31a3088aba6b9fc"
-ctx.VERSION = "dev"
-
-DUMP_FOLDER = pathlib.Path('./tests/dump').absolute()		
-
-class TestGeneral(unittest.TestCase):
-	@classmethod
-	def setUpClass(cls):
-		"""Inizializza il nucleo."""
-		cls.core = Core()
-	
-	def testApp(self):
-		app = Frontend(self.core)
-		self.core.start()
-		uvicorn.run(app, port=5000, host='0.0.0.0', log_level='critical')
+def _disposable_configuration():
+    if os.getenv("ANIDOWN_LEGACY_INTEGRATION_OPT_IN") != "DISPOSABLE_LOOPBACK_ONLY":
+        return None
+    origin = os.getenv("ANIDOWN_LEGACY_SONARR_URL", "").strip().rstrip("/")
+    parsed = urlsplit(origin)
+    if parsed.scheme != "http" or parsed.hostname not in {"127.0.0.1", "::1", "localhost"} or parsed.port is None:
+        raise RuntimeError("Opt-in endpoint must be disposable and loopback-only")
+    key_file = Path(os.getenv("ANIDOWN_LEGACY_SONARR_KEY_FILE", "")).resolve()
+    if not key_file.is_file():
+        raise RuntimeError("Opt-in integration requires a disposable credential file")
+    key = key_file.read_text(encoding="utf-8").strip()
+    if not 16 <= len(key) <= 512:
+        raise RuntimeError("Disposable credential is invalid")
+    return origin, key
 
 
-	def testSonarr(self):
-		with open(DUMP_FOLDER.joinpath('wanted_missing.json'), 'w') as f:
-			json.dump(self.core.sonarr.wantedMissing(2).json(), f)
-
-		with open(DUMP_FOLDER.joinpath('tags.json'), 'w') as f:
-			json.dump(self.core.sonarr.tags().json(), f)
-		
-		with open(DUMP_FOLDER.joinpath('queue.json'), 'w') as f:
-			json.dump(self.core.sonarr.queue().json(), f)
-		
-		with open(DUMP_FOLDER.joinpath('episode.json'), 'w') as f:
-			json.dump(self.core.sonarr.episode(16639).json(), f)
-		
-		with open(DUMP_FOLDER.joinpath('serie.json'), 'w') as f:
-			json.dump(self.core.sonarr.serie(340).json(), f)
-		
-		with open(DUMP_FOLDER.joinpath('system_status.json'), 'w') as f:
-			json.dump(self.core.sonarr.systemStatus().json(), f)
-	
-	@unittest.skipUnless(sys.platform.startswith("linux"), "requires linux")
-	def testConnections(self):
-		connections = self.core.connections
-		connections.send('test')
-
-	def testFlags(self):
-		with open(DUMP_FOLDER.joinpath('tags.txt'), 'w') as f:
-			for tag in self.core.tags:
-				json.dump(tag, f)	
-	
-	def testProcessor(self):
-		with open(DUMP_FOLDER.joinpath('getAllMissing.json'), 'w') as f:
-			json.dump(self.core.processor.getAllMissing(), f)
-		
-		with open(DUMP_FOLDER.joinpath('processor.json'), 'w') as f:
-			json.dump(self.core.processor.getData(), f)
-	
-	def testCore(self):
-		# self.core.job = lambda: (_ for _ in ()).throw(Exception())
-		with self.assertRaises(Exception):
-			self.core.run()
-			self.core.join()
-	
-	def testFrontend(self):
-		app = API(self.core)
-		uvicorn.run(app, port=5000, host='0.0.0.0')
-
-	def testFrontend_OLD(self):
-		app = Frontend(self.core)
-		app.run(debug=False, host='0.0.0.0', use_reloader=False)
+class LegacyIntegrationSafetyTests(unittest.TestCase):
+    def test_default_discovery_has_no_live_configuration(self):
+        if os.getenv("ANIDOWN_LEGACY_INTEGRATION_OPT_IN") is None:
+            self.assertIsNone(_disposable_configuration())
 
 
-	def testExternalDB(self):
-		ex = ExternalDB()
-		ex.sync()
-		with open(DUMP_FOLDER.joinpath('ExternalDB.json'), 'w') as f:
-			json.dump(ex.find('Tokyo Revengers', 3, 393478), f)
+@unittest.skipUnless(
+    os.getenv("ANIDOWN_LEGACY_INTEGRATION_OPT_IN") == "DISPOSABLE_LOOPBACK_ONLY",
+    "requires explicit disposable loopback Sonarr opt-in",
+)
+class DisposableLegacyIntegrationTests(unittest.TestCase):
+    def test_disposable_sonarr_status(self):
+        origin, key = _disposable_configuration()
+        from src.components.backend.core import Constant as ctx
+        from src.components.backend.connection.Sonarr import Sonarr
+
+        ctx.SONARR_URL = origin
+        ctx.API_KEY = key
+        response = Sonarr().systemStatus()
+        self.assertEqual(response.status_code, 200)
 
 
-if __name__ == '__main__':
-	unittest.main(verbosity=2, buffer=True)
+if __name__ == "__main__":
+    unittest.main(verbosity=2, buffer=True)
