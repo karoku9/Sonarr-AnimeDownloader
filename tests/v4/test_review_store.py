@@ -1,13 +1,13 @@
+from v4_test_support import repo_tempdir
 import unittest
 from pathlib import Path
-from tempfile import TemporaryDirectory
 from src.v4.models import Target, Candidate, Review
 from src.v4.matching import match
 from src.v4.review_store import ReviewRepository
 
 class ReviewStoreTests(unittest.TestCase):
     def test_lifecycle_and_original_snapshot(self):
-        with TemporaryDirectory(dir=Path(__file__).resolve().parents[2]/"work") as folder:
+        with repo_tempdir() as folder:
             path=Path(folder)/"reviews.sqlite3"
             target=Target("Unknown",season_number=1)
             candidates=(Candidate("c","Unknown","https://catalog.example/c"),)
@@ -27,7 +27,7 @@ class ReviewStoreTests(unittest.TestCase):
                 repo.update("r","overwrite",expected_revision=2)
 
     def test_dismiss_and_invalid_resolution(self):
-        with TemporaryDirectory(dir=Path(__file__).resolve().parents[2]/"work") as folder:
+        with repo_tempdir() as folder:
             repo=ReviewRepository(Path(folder)/"r.sqlite3")
             t=Target("Title",season_number=1)
             c=(Candidate("wrong","Title", "https://catalog.example/wrong",season_number=2),)

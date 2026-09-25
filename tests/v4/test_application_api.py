@@ -1,9 +1,9 @@
 """WSGI contract/integration tests with real stable snapshots and V4-only SQLite."""
+from v4_test_support import repo_tempdir
 from copy import deepcopy
 import io
 import json
 from pathlib import Path
-from tempfile import TemporaryDirectory
 import unittest
 from unittest.mock import patch
 from wsgiref.util import setup_testing_defaults
@@ -19,7 +19,7 @@ class MutableAdapter:
 
 class APITests(unittest.TestCase):
     def setUp(self):
-        self.temp=TemporaryDirectory(dir=Path("work"));self.addCleanup(self.temp.cleanup)
+        self.temp=repo_tempdir();self.addCleanup(self.temp.cleanup)
         self.path=Path(self.temp.name)/"app.sqlite3"
         self.app=create_app(self.path,{"regressions":FIXTURE})
         self.network=patch("urllib.request.OpenerDirector.open",side_effect=AssertionError("network forbidden"))

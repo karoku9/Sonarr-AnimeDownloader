@@ -1,8 +1,8 @@
 """Phase 12 recovery, ownership, operator and loopback-gateway contracts."""
+from v4_test_support import repo_tempdir
 from copy import deepcopy
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from tempfile import TemporaryDirectory
 from threading import Thread
 import io
 import json
@@ -23,7 +23,7 @@ CONFIRMATION = "EXECUTE APPROVED PLAN"
 
 class CutoverTests(unittest.TestCase):
     def setUp(self):
-        self.temp = TemporaryDirectory(dir=Path("work"));self.addCleanup(self.temp.cleanup)
+        self.temp = repo_tempdir();self.addCleanup(self.temp.cleanup)
         self.path = Path(self.temp.name)/"app.sqlite3"
         self.store = ApplicationStore(self.path)
         self.service = ApplicationService(self.store,{"fixture":SnapshotAdapter(FIXTURE)})

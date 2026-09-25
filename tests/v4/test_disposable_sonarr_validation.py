@@ -1,7 +1,7 @@
 """Phase 15 disposable-Sonarr validation safety and evidence contracts."""
+from v4_test_support import repo_tempdir
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from tempfile import TemporaryDirectory
 from threading import Thread
 import json
 import unittest
@@ -17,7 +17,7 @@ from src.v4.disposable_validation import (
 
 class DisposableValidationTests(unittest.TestCase):
     def setUp(self):
-        self.temp=TemporaryDirectory(dir=Path("work"));self.addCleanup(self.temp.cleanup)
+        self.temp=repo_tempdir();self.addCleanup(self.temp.cleanup)
         self.root=Path(self.temp.name).resolve();(self.root/".anidown-v4-disposable").write_text(MARKER,encoding="utf-8")
         self.staging=self.root/"staging";self.library=self.root/"library";self.journal=self.root/"journal"
         self.staging.mkdir();self.library.mkdir();self.secret=self.root/"sonarr-api-key"

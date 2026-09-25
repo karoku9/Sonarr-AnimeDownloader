@@ -3,12 +3,12 @@
 Every fixture is synthetic or a temporary copy.  Nothing in this module contacts
 Sonarr, AnimeWorld, a production database, or a downloader.
 """
+from v4_test_support import repo_tempdir
 from concurrent.futures import ThreadPoolExecutor
 from copy import deepcopy
 import importlib.util
 import json
 from pathlib import Path
-from tempfile import TemporaryDirectory
 import unittest
 from unittest.mock import patch
 
@@ -105,7 +105,7 @@ def snapshot(series_id, *, revision=0, episodes=24):
 
 class CurrentProjectionRegressions(unittest.TestCase):
     def setUp(self):
-        self.temporary = TemporaryDirectory(dir=ROOT / "work")
+        self.temporary = repo_tempdir()
         self.addCleanup(self.temporary.cleanup)
         self.path = Path(self.temporary.name) / "application.sqlite3"
         self.store = ApplicationStore(self.path)
@@ -375,7 +375,7 @@ class LegacyRegressionTests(unittest.TestCase):
         self.assertGreater(AnimeWorldIndex.apply_language_preference(None, 0.8, {"audio": "SUB"}, "SUB_FIRST"), 0.8)
 
     def test_av4_023_atomic_json_survives_interruption_and_concurrent_writers(self):
-        with TemporaryDirectory(dir=ROOT / "work") as temporary:
+        with repo_tempdir() as temporary:
             path = Path(temporary) / "state.json"
             _ATOMIC_JSON.write_json_durable(path, {"writer": "initial", "values": list(range(20))})
             before = path.read_bytes()

@@ -1,10 +1,10 @@
+from v4_test_support import repo_tempdir
 import io
 import json
 import unittest
 from datetime import datetime, timedelta, timezone
 from itertools import permutations
 from pathlib import Path
-from tempfile import TemporaryDirectory
 from wsgiref.util import setup_testing_defaults
 
 from src.v4.api import create_app
@@ -82,7 +82,7 @@ class Phase1RemediationTests(unittest.TestCase):
         self.assertNotIn("!src/components/", context)
 
     def test_av4_019_duplicate_gate_detects_overwritten_tests(self):
-        with TemporaryDirectory(dir=ROOT / "work") as temporary:
+        with repo_tempdir() as temporary:
             path = Path(temporary) / "test_duplicate_example.py"
             path.write_text("class TestDuplicate:\n    def test_same(self): pass\n    def test_same(self): pass\n", encoding="utf-8")
             found = duplicates([temporary])
@@ -100,7 +100,7 @@ class Phase1RemediationTests(unittest.TestCase):
         self.assertFalse(any(path.startswith("src/components/") for path in paths))
 
     def test_av4_005_private_peer_cannot_gain_mutation_trust_by_host_spoofing(self):
-        with TemporaryDirectory(dir=ROOT / "work") as temporary:
+        with repo_tempdir() as temporary:
             token = Path(temporary) / "token"
             token.write_text("t" * 48, encoding="utf-8")
             app = create_runtime(Path(temporary) / "runtime.sqlite3", {"real": FIXTURE},
@@ -143,7 +143,7 @@ class Phase1RemediationTests(unittest.TestCase):
         self.assertGreater(ttl_for(provider_detail(url)), ttl_for(provider_detail(url, status="metadata_not_found")))
         self.assertGreater(ttl_for(provider_detail(url, status="metadata_not_found")),
             ttl_for(provider_detail(url, status="fetch_failed")))
-        with TemporaryDirectory(dir=ROOT / "work") as temporary:
+        with repo_tempdir() as temporary:
             now = [datetime(2026, 9, 22, tzinfo=timezone.utc)]
             responses = [provider_detail(url, status="fetch_failed"), provider_detail(url, title="Recovered")]
             calls = []
@@ -161,7 +161,7 @@ class Phase1RemediationTests(unittest.TestCase):
             self.assertEqual(len(calls), 2)
 
     def test_av4_007_008_stale_success_survives_outage_then_retries(self):
-        with TemporaryDirectory(dir=ROOT / "work") as temporary:
+        with repo_tempdir() as temporary:
             now = [datetime(2026, 9, 22, tzinfo=timezone.utc)]
             url = "https://www.animeworld.ac/play/stale-success.test"
             responses = [provider_detail(url, title="Old"), provider_detail(url, status="fetch_failed"), provider_detail(url, title="New")]
@@ -177,7 +177,7 @@ class Phase1RemediationTests(unittest.TestCase):
             self.assertEqual(cache.get(url)["raw"]["title"], "New")
 
     def test_av4_007_validation_budget_marks_overflow_pending(self):
-        with TemporaryDirectory(dir=ROOT / "work") as temporary:
+        with repo_tempdir() as temporary:
             dataset = LiveSonarrDataset("http://sonarr.invalid", Path(temporary) / "key", FIXTURE,
                 Path(temporary) / "cache", validation_budget=3)
             groups = [{"item_id": f"item-{index}", "source_fingerprints": {
@@ -187,7 +187,7 @@ class Phase1RemediationTests(unittest.TestCase):
             self.assertEqual(pending, {f"item-{index}" for index in range(3, 8)})
 
     def test_av4_007_pending_validation_is_explicit_and_non_executable(self):
-        with TemporaryDirectory(dir=ROOT / "work") as temporary:
+        with repo_tempdir() as temporary:
             app = create_app(Path(temporary) / "app.sqlite3", {"real": FIXTURE})
             app.service.scan("real")
             item = next(row for row in app.service.store.list_items() if row["mapping_state"] == "proposed")
@@ -238,7 +238,7 @@ class Phase1RemediationTests(unittest.TestCase):
         self.assertTrue(best_exact_covers([full, left, right], {1, 2}, state_limit=1)[1])
 
     def test_av4_010_audio_master_is_durable_and_revisioned(self):
-        with TemporaryDirectory(dir=ROOT / "work") as temporary:
+        with repo_tempdir() as temporary:
             path = Path(temporary) / "audio.sqlite3"
             store = ApplicationStore(path)
             first = store.set_series_audio_master("42", "DUB", "42:1", "a" * 64)
@@ -254,7 +254,7 @@ class Phase1RemediationTests(unittest.TestCase):
         self.assertFalse(LiveSonarrDataset._preservation_valid(group,regular,{"42":"SUB"},{}))
 
     def test_av4_010_scan_uses_master_even_when_s1_is_not_preserved(self):
-        with TemporaryDirectory(dir=ROOT / "work") as temporary:
+        with repo_tempdir() as temporary:
             app = create_app(Path(temporary) / "app.sqlite3", {"real": FIXTURE})
             app.service.scan("real")
             master = next(iter(app.service.store.series_audio_masters().items()))
@@ -269,7 +269,7 @@ class Phase1RemediationTests(unittest.TestCase):
             self.assertEqual(captured["series_audio_master"][master[0]], master[1]["audio"])
 
     def test_av4_011_partial_manual_mapping_cannot_be_approved_or_executed(self):
-        with TemporaryDirectory(dir=ROOT / "work") as temporary:
+        with repo_tempdir() as temporary:
             validator=FakeManualValidator()
             app = create_runtime(Path(temporary) / "app.sqlite3", {"real": FIXTURE},
                 manual_source_validator=validator)

@@ -1,8 +1,8 @@
 """Phase 13 production-shaped integration, still isolated and disabled by default."""
+from v4_test_support import repo_tempdir
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from contextlib import closing
 from pathlib import Path
-from tempfile import TemporaryDirectory
 from threading import Thread
 import json
 import sqlite3
@@ -46,7 +46,7 @@ class FakeDownloader:
 
 class Phase13Tests(unittest.TestCase):
     def setUp(self):
-        self.temp=TemporaryDirectory(dir=Path("work"));self.addCleanup(self.temp.cleanup)
+        self.temp=repo_tempdir();self.addCleanup(self.temp.cleanup)
         self.root=Path(self.temp.name);self.db=self.root/"app.sqlite3"
         self.store=ApplicationStore(self.db)
         self.service=ApplicationService(self.store,{"fixture":SnapshotAdapter(FIXTURE)})

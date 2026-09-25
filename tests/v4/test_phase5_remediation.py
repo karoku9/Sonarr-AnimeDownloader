@@ -1,9 +1,9 @@
+from v4_test_support import repo_tempdir
 import shutil
 import shlex
 import re
 import unittest
 from pathlib import Path
-from tempfile import TemporaryDirectory
 
 from src.v4.source_manifest import INCLUDED, build_manifest, compare_manifests
 
@@ -25,7 +25,7 @@ class Phase5RemediationTests(unittest.TestCase):
         self.assertNotIn("tests/v4/fixtures/phase16_regressions_v1.json", paths)
         self.assertFalse(any("graphify-out" in path for path in paths))
 
-        with TemporaryDirectory(dir=ROOT / "work") as temporary:
+        with repo_tempdir() as temporary:
             image_root = Path(temporary)
             for row in expected["files"]:
                 source = ROOT / row["path"]

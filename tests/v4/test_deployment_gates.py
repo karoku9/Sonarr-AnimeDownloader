@@ -1,3 +1,4 @@
+from v4_test_support import repo_tempdir
 import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -26,6 +27,26 @@ class FakeStrictVerifier:
 
 
 class DeploymentGateTests(unittest.TestCase):
+    def test_repo_tempdir_creates_its_missing_work_root(self):
+        import v4_test_support
+        with TemporaryDirectory() as outer:
+            missing=Path(outer)/"work"
+            self.assertFalse(missing.exists())
+            with patch.object(v4_test_support,"WORK_ROOT",missing):
+                with v4_test_support.repo_tempdir() as created:
+                    self.assertTrue(missing.is_dir())
+                    self.assertTrue(Path(created).resolve().is_relative_to(missing.resolve()))
+
+    def test_v4_tests_use_repo_temp_helper_instead_of_raw_work_parent(self):
+        offenders=[]
+        for path in Path(__file__).resolve().parent.glob("test_*.py"):
+            if path.resolve()==Path(__file__).resolve():
+                continue
+            text=path.read_text(encoding="utf-8")
+            if "TemporaryDirectory(dir=" in text and "work" in text:
+                offenders.append(path.name)
+        self.assertEqual(offenders,[])
+
     def test_external_alias_requeries_provider_catalog(self):
         snapshot={"schema_version":1,"provider_catalog":{"complete":True,"entries":[{
             "title":"Guilty Hole","url":"https://www.animeworld.ac/play/guilty-hole.test",
@@ -48,7 +69,7 @@ class DeploymentGateTests(unittest.TestCase):
         self.assertEqual(case["raw"]["details"]["https://www.animeworld.ac/play/guilty-hole.test"]["status"],"ok")
 
     def test_gemini_gate_demotes_but_never_promotes(self):
-        with TemporaryDirectory(dir="work") as temp:
+        with repo_tempdir() as temp:
             app=create_app(Path(temp)/"x.sqlite3",{"real":"tests/v4/fixtures/production_metadata_v1.json"},
                 verifier=FakeStrictVerifier(confirm=False))
             try:
@@ -63,7 +84,7 @@ class DeploymentGateTests(unittest.TestCase):
             finally:pass
 
     def test_confirmed_gemini_keeps_proposal(self):
-        with TemporaryDirectory(dir="work") as temp:
+        with repo_tempdir() as temp:
             app=create_app(Path(temp)/"x.sqlite3",{"real":"tests/v4/fixtures/production_metadata_v1.json"},
                 verifier=FakeStrictVerifier(confirm=True))
             try:

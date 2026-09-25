@@ -3,10 +3,10 @@
 Every test is hermetic: effect adapters are fake or isolated and all persistence
 lives below ``work/``.
 """
+from v4_test_support import repo_tempdir
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
-from tempfile import TemporaryDirectory
 from unittest.mock import patch
 import os
 import re
@@ -32,7 +32,7 @@ FIXTURE = "tests/v4/fixtures/production_metadata_v1.json"
 
 class Phase2RemediationTests(unittest.TestCase):
     def temporary(self):
-        return TemporaryDirectory(dir=ROOT / "work")
+        return repo_tempdir()
 
     @staticmethod
     def current_item(service, target_id="182:1"):

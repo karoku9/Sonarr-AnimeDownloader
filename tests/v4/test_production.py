@@ -1,4 +1,5 @@
 """Regressions sourced only from stable sanitized production_metadata_v1.json."""
+from v4_test_support import repo_tempdir
 import json
 from pathlib import Path
 import unittest
@@ -116,11 +117,9 @@ class ProductionRegression(unittest.TestCase):
             self.assertEqual(target.canonical_title,case["raw"]["sonarr_series"]["title"])
 
     def test_real_source_manifest_detects_semantic_drift(self):
-        from tempfile import TemporaryDirectory
         import hashlib
         from src.v4.production import verify_capture
-        root=Path(__file__).resolve().parents[2]/"work"
-        with TemporaryDirectory(dir=root) as temp:
+        with repo_tempdir() as temp:
             folder=Path(temp)
             source=self.case("Black Lagoon",1)["raw"]["sonarr_series"]
             payload=json.dumps(source,ensure_ascii=False,indent=2)

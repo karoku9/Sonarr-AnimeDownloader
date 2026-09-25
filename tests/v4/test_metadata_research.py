@@ -1,6 +1,6 @@
+from v4_test_support import repo_tempdir
 import json
 from pathlib import Path
-from tempfile import TemporaryDirectory
 import unittest
 
 from src.v4.metadata_research import PublicMetadataResearcher,_parse_tvdb_ordering
@@ -59,7 +59,7 @@ class MetadataResearchTests(unittest.TestCase):
             def __init__(self):self.calls=[]
             def enrich(self,snapshot,series_ids):self.calls.append(set(series_ids));return snapshot,False
         researcher=FakeResearcher()
-        with TemporaryDirectory(dir=Path("work")) as tmp:
+        with repo_tempdir() as tmp:
             app=create_app(Path(tmp)/"app.sqlite3",{"fixture":"tests/v4/fixtures/production_metadata_v1.json"},metadata_researcher=researcher)
             app.service.scan("fixture")
         self.assertEqual(len(researcher.calls),1)

@@ -1,13 +1,13 @@
 """Runtime 4.1 contracts: loopback static UI, durable asynchronous jobs, audit."""
+from v4_test_support import repo_tempdir
 import io,json,threading,time,unittest
 from pathlib import Path
-from tempfile import TemporaryDirectory
 from wsgiref.util import setup_testing_defaults
 from src.v4.runtime import create_runtime
 
 class RuntimeTests(unittest.TestCase):
     def setUp(self):
-        self.temp=TemporaryDirectory(dir="work");self.addCleanup(self.temp.cleanup)
+        self.temp=repo_tempdir();self.addCleanup(self.temp.cleanup)
         self.app=create_runtime(Path(self.temp.name)/"runtime.sqlite3",{"real":"tests/v4/fixtures/production_metadata_v1.json"})
         self.addCleanup(self.app.close)
     def request(self,method,path,body=None,**headers):

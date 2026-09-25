@@ -1,5 +1,5 @@
+from v4_test_support import repo_tempdir
 from pathlib import Path
-from tempfile import TemporaryDirectory
 import unittest
 
 from src.v4.runtime import create_runtime
@@ -9,7 +9,7 @@ FIXTURE="tests/v4/fixtures/production_metadata_v1.json"
 
 class AutoScanTests(unittest.TestCase):
     def test_scheduler_is_dynamic_and_manual_scan_resets_timer(self):
-        with TemporaryDirectory(dir=Path("work")) as temp:
+        with repo_tempdir() as temp:
             runtime=create_runtime(Path(temp)/"app.sqlite3",{"production":FIXTURE})
             runtime.auto_scan.close()
             try:

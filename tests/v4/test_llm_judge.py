@@ -1,7 +1,7 @@
 """Phase 9 judge: suggestions cannot become deterministic mapping decisions."""
+from v4_test_support import repo_tempdir
 import json
 from pathlib import Path
-from tempfile import TemporaryDirectory
 import unittest
 from unittest.mock import patch
 
@@ -23,7 +23,7 @@ def group():
 
 class JudgeTests(unittest.TestCase):
     def setUp(self):
-        self.tmp=TemporaryDirectory(dir=Path("work"));self.addCleanup(self.tmp.cleanup)
+        self.tmp=repo_tempdir();self.addCleanup(self.tmp.cleanup)
         self.store=ApplicationStore(Path(self.tmp.name)/"reviews.sqlite3")
 
     def judge(self,response,**policy):

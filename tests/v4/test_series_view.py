@@ -1,7 +1,7 @@
+from v4_test_support import repo_tempdir
 import time
 import unittest
 from pathlib import Path
-from tempfile import TemporaryDirectory
 
 from src.v4.runtime import create_runtime
 from src.v4.execution import ExecutionCoordinator,FakeDownstreamAdapter
@@ -18,7 +18,7 @@ class FakeManualValidator:
 
 class SeriesViewTests(unittest.TestCase):
     def setUp(self):
-        self.temp=TemporaryDirectory(dir="work");self.addCleanup(self.temp.cleanup)
+        self.temp=repo_tempdir();self.addCleanup(self.temp.cleanup)
         self.app=create_runtime(Path(self.temp.name)/"series.sqlite3",{"real":"tests/v4/fixtures/production_metadata_v1.json"},
             manual_source_validator=FakeManualValidator())
         self.addCleanup(self.app.close)

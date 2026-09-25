@@ -1,8 +1,8 @@
 """Phase 11 approved-only downstream boundary tests using V4-local storage."""
+from v4_test_support import repo_tempdir
 from concurrent.futures import ThreadPoolExecutor
 from copy import deepcopy
 from pathlib import Path
-from tempfile import TemporaryDirectory
 from contextlib import closing
 import json
 import sqlite3
@@ -25,7 +25,7 @@ FIXTURE = "tests/v4/fixtures/production_metadata_v1.json"
 
 class ExecutionTests(unittest.TestCase):
     def setUp(self):
-        self.temp = TemporaryDirectory(dir=Path("work"))
+        self.temp = repo_tempdir()
         self.addCleanup(self.temp.cleanup)
         self.path = Path(self.temp.name) / "app.sqlite3"
         self.store = ApplicationStore(self.path)

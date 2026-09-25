@@ -1,6 +1,6 @@
+from v4_test_support import repo_tempdir
 import unittest
 from pathlib import Path
-from tempfile import TemporaryDirectory
 
 from src.v4.runtime import create_runtime
 from src.v4.download_manager import DownloadQueue
@@ -16,7 +16,7 @@ class FakeSonarr:
 
 class DownloadManagerTests(unittest.TestCase):
     def setUp(self):
-        self.temp=TemporaryDirectory(dir="work");self.addCleanup(self.temp.cleanup)
+        self.temp=repo_tempdir();self.addCleanup(self.temp.cleanup)
         self.app=create_runtime(Path(self.temp.name)/"downloads.sqlite3",
             {"real":"tests/v4/fixtures/production_metadata_v1.json"})
         self.addCleanup(self.app.close)
